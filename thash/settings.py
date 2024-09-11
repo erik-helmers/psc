@@ -44,7 +44,12 @@ INSTALLED_APPS = [
     'django_tasks',
     'django_tasks.backends.database',
 
-    'django_extensions'
+    'django_extensions',
+    'tailwind',
+    'theme',
+
+    'django_browser_reload'
+
 ]
 
 MIDDLEWARE = [
@@ -53,8 +58,13 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'thash.urls'
@@ -142,3 +152,10 @@ TASKS = {
         "BACKEND": "django_tasks.backends.database.DatabaseBackend"
     }
 }
+
+
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
