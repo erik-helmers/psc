@@ -6,7 +6,7 @@ services:
              python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
-      - ../db/live:/samples:ro,noexec
+      - ../db/live:/samples:ro
       - ../db/algos:/algos
     ports:
       - "8000:8000"
