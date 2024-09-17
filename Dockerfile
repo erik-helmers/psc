@@ -1,6 +1,8 @@
 # Use the official Python image from the Docker Hub
 FROM python:3.12
 
+RUN useradd  --system --create-home --no-log-init thash
+
 USER thash
 
 
@@ -15,7 +17,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 
 # Install the dependencies from the requirements file
-RUN pip install --root --upgrade pip && pip install --root -r requirements.txt
+RUN pip install --root --upgrade pip && pip install -r requirements.txt
 
 # Copy the Django application code to the container
 COPY . /app/
