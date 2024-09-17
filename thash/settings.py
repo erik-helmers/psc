@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 
 # Our own config variables
-SAMPLE_ROOT = "/home/erik-helmers/x/psc/db/live/"
-ALGO_ROOT = "/home/erik-helmers/x/psc/algos/"
+SAMPLE_ROOT = str(Path("../db/live/").resolve())
+ALGO_ROOT   = str(Path("../db/algos/").resolve())
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
