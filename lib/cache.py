@@ -58,12 +58,12 @@ class Cache:
         ])
         self.session.commit()
 
-    def get_results(self, runner, bench):
+    def get_results(self, runner, pairs):
         rows = (self.session.query(DbResult.ref, DbResult.alt, DbResult.dist)
             .filter(DbResult.runner == runner)
             .filter(tuple_(DbResult.ref, DbResult.alt).in_(pairs))
             .all())
 
         output = [(ref, alt, dist) for ref, alt, dist in rows]
-        remaining = list(set(bench.pairs()) - set((ref, alt) for (ref, alt, _) in output))
+        remaining = list(set(pairs) - set((ref, alt) for (ref, alt, _) in output))
         return output, remaining

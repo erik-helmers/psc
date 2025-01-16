@@ -5,13 +5,36 @@ from typing import NamedTuple
 
 class Runner:
 
-    def __init__(self, id: str):
-        self._id = id
-
-    def id(self): return self._id
+    def id(self): return self.__class__.__name__
 
     def run(self, pairs):
         raise NotImplementedError()
+
+class HashDiffRunner(Runner):
+    """ Use this runner when you simply need to hash  the
+        files then compare your hashes
+    """
+    def __init__(self):
+        self.artifacts = dict()
+
+    def run(self, pairs):
+        for ref, alt in pairs:
+            href = self._get_or_compute(ref, self.hash)
+            halt = self._get_or_compute(alt, self.hash)
+            yield (ref, alt, self.distance(href, halt))
+
+    def hash(self, path):
+        """Given a path name, return its hash"""
+        raise NotImplementedError("Override me!")
+
+
+    def distance(self, href, halt):
+        """Given two hashes, return their distances"""
+        raise NotImplementedError("Override me!")
+
+    def _get_or_compute(self, key, compute):
+        if key not in self.artifacts: self.artifacts[key] = compute(key)
+        return self.artifacts[key]
 
 class Benchmark:
 
@@ -27,13 +50,17 @@ class Benchmark:
         return self._pairs
 
     def metadata(self, path):
-        return self._metadata
+        return self._metadata[path]
 
     """ Create a new Benchmark instance from the specified root path (relative to
         the benchmarks root directy) """
     @staticmethod
-    def from_path(path: Path):
-        files = list(filter(Path.is_file, path.iterdir()))
+    def from_path(root: Path, path: Path):
+        files = [
+            p.relative_to(root)
+            for p in (root/path).iterdir()
+            if p.is_file()
+        ]
         metadata = {
             path: Benchmark.path_metadata(path)
             for path in files
@@ -72,18 +99,28 @@ Result = NamedTuple("Result", [
 class XXX:
 
     def __init__(self, data_root: Path):
+        from .cache import Cache, session_from_path
+        from runners import RUNNERS
         self.root = data_root
-        self.benchmarks = benchmarks
-        self.runners = runners
-        self.cache = cache
+        self._benchmarks = [
+            Benchmark.from_path(self.root, path)
+            for path in (self.root / "benchmarks").iterdir()
+            if not path.is_file()
+        ]
 
+        self._runners = RUNNERS
+        self._cache = Cache(session_from_path(self.root / "cache.sqlite"))
 
     def benchmarks(self):
-        return list(map(Benchmark.id, self.benchmarks))
+        return list(map(Benchmark.id, self._benchmarks))
 
     def runners(self):
-        return list(map(Runner.id, self.runners))
+        return list(map(Runner.id, self._runners))
 
+    def __runner_by_id(self, runner):
+        return next(filter(lambda r: r.id() == runner, self._runners))
+    def __benchmark_by_id(self, benchmark):
+        return next(filter(lambda b: b.id() == benchmark, self._benchmarks))
 
     """
     All of this library revolves around this method : given some runners
@@ -100,15 +137,33 @@ class XXX:
         rows = []
         for runner in runners:
             for bench in benchs:
-                results, remaining = self.cache.get_results(runner, bench)
-                results_to_save = []
-                for ref, alt, dist in runner.run(remaining):
-                    results.append((ref, alt, dist))
-                    results_to_save.append((ref, alt, dist))
-                self.cache.save_results(runner.id(), results_to_save)
+                runner = self.__runner_by_id(runner)
+                bench = self.__benchmark_by_id(bench)
+                runner = XXX.CachedRunner(self.root, self._cache, runner)
+                results = runner.run(bench.pairs())
                 rows.extend([
-                    (runner.id(), bench.id(), ref, alt, bench.metadata()[alt], dist)
+                    (runner.id(), bench.id(), ref, alt, bench.metadata(alt), dist)
                     for ref, alt, dist in results
                 ])
         df = pd.DataFrame(rows, columns=['algo', 'bench', 'ref', 'alt', 'mods', 'dist'])
         return df
+
+    class CachedRunner(Runner):
+        def __init__(self, root, cache, runner):
+            self.root = root
+            self.cache = cache
+            self.runner = runner
+
+        def id(self):
+            return self.runner.id()
+
+        def run(self, pairs):
+            def relative(pairs): return [(ref.relative_to(self.root), alt.relative_to(self.root)) for ref, alt in pairs]
+            def absolute(pairs): return [(self.root / ref, self.root / alt) for ref,alt in pairs ]
+            results, remaining = self.cache.get_results(self.runner.id(), pairs)
+            results_to_save = []
+            for ref, alt, dist in self.runner.run(absolute(remaining)):
+                results.append((ref, alt, dist))
+                results_to_save.append((*relative([(ref, alt)])[0], dist))
+            self.cache.save_results(self.runner.id(), results_to_save)
+            return results
