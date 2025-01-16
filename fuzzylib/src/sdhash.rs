@@ -1,6 +1,5 @@
-use bytemuck::cast_slice;
 use bytemuck::cast_slice_mut;
-use sha1::{Digest, Sha1};
+use sha1::Digest;
 
 use crate::shannon::Shannon;
 use crate::tools::Slicetools;
@@ -51,7 +50,7 @@ impl Hash<[u8], BloomVec> for SDHash {
                 let new = *w.last().unwrap();
                 if new > vmax { imax = i; vmax = new }
                 else if i > imax  {
-                    (imax, vmax) = get_max(&w);
+                    (imax, vmax) = get_max(w);
                     imax += i;
                 }
                 out[imax] += 1;

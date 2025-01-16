@@ -5,7 +5,7 @@
 //! non-overlapping features, while other classes of algorithms like LSH have many small
 //! overlapping features. This module provides ways to construct them.
 
-use std::{ops::Index, slice::SliceIndex};
+use std::ops::Index;
 
 
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
@@ -122,7 +122,7 @@ impl<'a, T, F> Iterator for PartitionIterator<'a, T, F>
 /// `Continue` if the element is part of the current feature, `Save` if the element
 /// is the first of a new feature and the current feature should be saved, and `Discard`
 /// if the element is the first of a new feature and the current feature should be discarded.
-pub fn partition<'a, T, F>(data: &'a [T], callback: F) -> PartitionIterator<'a, T, F>
+pub fn partition<T, F>(data: &[T], callback: F) -> PartitionIterator<'_, T, F>
  where F: FnMut(&T) -> PartitionAction {
     PartitionIterator::new(data, callback)
 }

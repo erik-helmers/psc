@@ -43,12 +43,12 @@ impl RollingHash<[u32], u32> for Alder {
                 let (mut x, mut y, mut z) = state;
                 let (old, new) = (W(old.copied().unwrap_or(0)), W(*new));
                 let ws = W(self.window_size as _);
-                y = y - x;
-                y = y + ws * new;
-                x = x + new;
-                x = x - old;
-                z = z << 5;
-                z = z ^ new;
+                y -= x;
+                y += ws * new;
+                x += new;
+                x -= old;
+                z <<= 5;
+                z ^= new;
 
                 *state = (x,y,z);
 

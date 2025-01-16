@@ -62,10 +62,10 @@ impl Hash<[u32], Digest> for SiSe {
     }
 }
 
-impl Into<String> for Digest {
-    fn into(self) -> String {
+impl From<Digest> for String {
+    fn from(val: Digest) -> Self {
         let sig = |sig: Vec<_>| sig.iter().map(|v| base64(*v as usize & 0x3F)).collect::<String>();
-        format!("{}:{}:{}", self.block_size, sig(self.sig1), sig(self.sig2))
+        format!("{}:{}:{}", val.block_size, sig(val.sig1), sig(val.sig2))
     }
 }
 

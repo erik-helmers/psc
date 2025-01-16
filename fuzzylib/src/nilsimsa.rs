@@ -19,7 +19,7 @@ impl Hash<[u8], [u8;32]> for Nilsimsa {
     fn hash(&self, data: &[u8]) -> [u8; 32] {
         let window_size = 5;
 
-        let hist = data.windows(window_size)
+        let hist = data.windows(5)
             .flat_map(|w|{essential_triplets(w).map(|t| Pearson.hash(&t))})
             .counts();
 

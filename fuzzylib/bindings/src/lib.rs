@@ -1,5 +1,3 @@
-use bytemuck::cast_slice;
-use fuzzy_hash::nilsimsa::Nilsimsa;
 use pyo3::prelude::*;
 use pyo3::types::PyIterator;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};

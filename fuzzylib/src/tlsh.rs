@@ -25,11 +25,11 @@ impl Hash<[u8], Digest> for Tlsh {
 
         let counts = data
             .windows(5)
-            .flat_map(|w| triplets(w).into_iter().map(|t| Pearson::default().hash(&t)))
+            .flat_map(|w| triplets(w).into_iter().map(|t| Pearson.hash(&t)))
             .counts();
 
         let (q1, q2, q3) = {
-            let sorted = { let mut x = counts.clone(); x.sort(); x };
+            let sorted = { let mut x = counts; x.sort(); x };
             let q1 = sorted[sorted.len() / 4];
             let q2 = sorted[sorted.len() / 2];
             let q3 = sorted[sorted.len() * 3 / 4];
@@ -38,7 +38,7 @@ impl Hash<[u8], Digest> for Tlsh {
 
         let hist = counts.into_iter().map(|c| {
             if c < q2 {if c < q1 {1} else {2}}
-            else {if c < q3 {3} else {4}}
+            else if c < q3 {3} else {4}
         }).collect::<Vec<u8>>();
 
         Digest { hist: hist.try_into().unwrap() }

@@ -5,6 +5,12 @@ use crate::Hash;
 /// It is the 32 bit variant of the hash. Described at :
 /// https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
 pub struct Fnv;
+impl Default for Fnv {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Fnv {
     pub fn new() -> Self {
         Fnv

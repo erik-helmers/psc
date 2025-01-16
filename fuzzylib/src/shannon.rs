@@ -59,7 +59,7 @@ impl RollingHash<[u8], f64> for Shannon<64> {
 
                 let mut update = |val:u8, delta: i16| {
                     let old_count = counts[val as usize] as usize;
-                    let new_count = (old_count as i16 + delta as i16) as usize;
+                    let new_count = (old_count as i16 + delta) as usize;
                     counts[val as usize] = new_count as u8;
                     Self::TERMS[new_count] - Self::TERMS[old_count]
                 };

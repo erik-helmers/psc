@@ -1,4 +1,3 @@
-use std::ops::Index;
 
 
 pub fn base64(val: usize) -> char{
