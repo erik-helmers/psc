@@ -70,7 +70,7 @@ class Benchmark:
             for path in files
             if not metadata[path].get('ref')
         ]
-        return Benchmark(str(path), pairs, metadata)
+        return Benchmark(str(path.relative_to(root/"benchmarks")), pairs, metadata)
 
     @staticmethod
     def path_metadata(path):
@@ -96,7 +96,7 @@ Result = NamedTuple("Result", [
     ('dist', float),
 ])
 
-class XXX:
+class Core:
 
     def __init__(self, data_root: Path):
         from .cache import Cache, session_from_path
@@ -141,7 +141,7 @@ class XXX:
             for bench in benchs:
                 runner = self.__runner_by_id(runner)
                 bench = self.__benchmark_by_id(bench)
-                runner = XXX.CachedRunner(self.root, self._cache, runner)
+                runner = Core.CachedRunner(self.root, self._cache, runner)
                 results = runner.run(bench.pairs())
                 rows.extend([
                     (runner.id(), bench.id(),

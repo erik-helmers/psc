@@ -6,8 +6,15 @@ readme = "README.md"
 requires-python = "~=3.11"
 dependencies = [
     "ipython>=8.31.0",
+    "jupyterthemes>=0.20.0",
     "maturin>=1.8.1",
     "pandas>=2.2.3",
+    "pygwalker>=0.4.9.13",
     "pyright>=1.1.392",
     "sqlalchemy>=2.0.37",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
 ]
