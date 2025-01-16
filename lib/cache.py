@@ -51,11 +51,17 @@ class Cache:
         if session is None: session = sessionmaker(bind=create_engine("sqlite://", echo=True))()
         self.session = session
 
-    def save_results(self, runner:str, results:tuple[Path, Path, float]):
+    def save_results(self, runner:str, results:list[tuple[Path, Path, float]]):
         self.session.bulk_save_objects([
             DbResult.from_result(runner, res)
             for res in results
         ])
+        self.session.commit()
+
+    def update_results(self, runner:str, results:list[tuple[Path, Path, float]]):
+        # NOTE: this is slow
+        for res in results:
+            self.session.merge(DbResult.from_result(runner, res))
         self.session.commit()
 
     def get_results(self, runner, pairs):

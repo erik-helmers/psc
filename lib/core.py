@@ -7,8 +7,10 @@ class Runner:
 
     def id(self): return self.__class__.__name__.lower()
 
-    def run(self, pairs):
+    def run(self, pairs: list[tuple[Path, Path]]) -> list[tuple[Path, Path, float]]:
         raise NotImplementedError()
+
+
 
 class HashDistRunner(Runner):
     """ Use this runner when you simply need to hash  the
@@ -46,8 +48,9 @@ class Benchmark:
     def id(self) -> str:
         return self._id
 
-    def pairs(self):
-        return self._pairs
+    def pairs(self, /, root=None):
+        if root is None: return self._pairs
+        else: return [(root/ref, root/alt) for ref, alt in self._pairs]
 
     def metadata(self, path: Path):
         return self._metadata[path]
@@ -117,10 +120,12 @@ class Core:
     def runners(self):
         return list(map(Runner.id, self._runners))
 
-    def __runner_by_id(self, runner):
-        return next(filter(lambda r: r.id() == runner, self._runners))
-    def __benchmark_by_id(self, benchmark):
-        return next(filter(lambda b: b.id() == benchmark, self._benchmarks))
+    def __runner_by_id(self, runner: str) -> Runner:
+        try: return next(filter(lambda r: r.id() == runner, self._runners))
+        except StopIteration: raise ValueError(f"runner {runner} doesn't exist in {self.runners()}")
+    def __benchmark_by_id(self, benchmark: str) -> Benchmark:
+        try: return next(filter(lambda b: b.id() == benchmark, self._benchmarks))
+        except StopIteration: raise ValueError(f"benchmark {benchmark} doesn't exist in {self.benchmarks()}")
 
     """
     All of this library revolves around this method : given some runners
@@ -132,22 +137,33 @@ class Core:
        - `alt`  : the alternative file (ie. a path relative to the bench root)
        - `mods` : the metadata about the relation between `ref` and `alt`
        - `dist` : the distance (a float) as computed by the runner
+
+    Options:
+      - `bypass_cache`: don't use the cache in any way
+      - `recompute_cache`: drop the previously cached results
     """
-    def run(self, runners, benchs) -> pd.DataFrame :
+    def run(self, runners: list[str], benchs: list[str],
+            bypass_cache=False, recompute_cache=False) -> pd.DataFrame :
+        print(f"Running {runners} with benchs {benchs}")
         def rel(path): return path.relative_to(self.root)
         def abs(path): return self.root / path
         rows = []
-        for runner in runners:
-            for bench in benchs:
-                runner = self.__runner_by_id(runner)
-                bench = self.__benchmark_by_id(bench)
-                runner = Core.CachedRunner(self.root, self._cache, runner)
-                results = runner.run(bench.pairs())
+        for runner_id in runners:
+            for bench_id in benchs:
+                runner= self.__runner_by_id(runner_id)
+                bench = self.__benchmark_by_id(bench_id)
+
+                if not bypass_cache and not recompute_cache:
+                    runner = Core.CachedRunner(self.root, self._cache, runner)
+
+                results = runner.run(bench.pairs(root=self.root))
                 rows.extend([
                     (runner.id(), bench.id(),
                      rel(ref), rel(alt),bench.metadata(rel(alt)), dist)
                     for ref, alt, dist in results
                 ])
+
+                if recompute_cache: self._cache.update_results(runner.id(), results)
         df = pd.DataFrame(rows, columns=['algo', 'bench', 'ref', 'alt', 'mods', 'dist'])
         return df
 
@@ -169,10 +185,10 @@ class Core:
             #   * However, the runners use absolute paths and
             def rel(*paths): return tuple([path.relative_to(self.root) for path in paths])
             def abs(*paths): return tuple([self.root / path for path in paths])
-            results, remaining = self.cache.get_results(self.runner.id(), pairs)
+            results, remaining = self.cache.get_results(self.runner.id(), [rel(*pair)  for pair in pairs])
             results_to_save = []
             for ref, alt, dist in self.runner.run([abs(*pair) for pair in remaining]):
-                ref, alt = rel(Path(ref), Path(alt))
+                ref, alt = rel(ref, alt)
                 results.append((ref, alt, dist))
                 results_to_save.append((ref, alt, dist))
             self.cache.save_results(self.runner.id(), results_to_save)
