@@ -10,7 +10,7 @@ class Runner:
     def run(self, pairs):
         raise NotImplementedError()
 
-class HashDiffRunner(Runner):
+class HashDistRunner(Runner):
     """ Use this runner when you simply need to hash  the
         files then compare your hashes
     """
@@ -49,7 +49,7 @@ class Benchmark:
     def pairs(self):
         return self._pairs
 
-    def metadata(self, path):
+    def metadata(self, path: Path):
         return self._metadata[path]
 
     """ Create a new Benchmark instance from the specified root path (relative to
@@ -58,7 +58,7 @@ class Benchmark:
     def from_path(root: Path, path: Path):
         files = [
             p.relative_to(root)
-            for p in (root/path).iterdir()
+            for p in path.iterdir()
             if p.is_file()
         ]
         metadata = {
@@ -134,6 +134,8 @@ class XXX:
        - `dist` : the distance (a float) as computed by the runner
     """
     def run(self, runners, benchs) -> pd.DataFrame :
+        def rel(path): return path.relative_to(self.root)
+        def abs(path): return self.root / path
         rows = []
         for runner in runners:
             for bench in benchs:
@@ -142,11 +144,13 @@ class XXX:
                 runner = XXX.CachedRunner(self.root, self._cache, runner)
                 results = runner.run(bench.pairs())
                 rows.extend([
-                    (runner.id(), bench.id(), ref, alt, bench.metadata(alt), dist)
+                    (runner.id(), bench.id(),
+                     rel(ref), rel(alt),bench.metadata(rel(alt)), dist)
                     for ref, alt, dist in results
                 ])
         df = pd.DataFrame(rows, columns=['algo', 'bench', 'ref', 'alt', 'mods', 'dist'])
         return df
+
 
     class CachedRunner(Runner):
         def __init__(self, root, cache, runner):
@@ -158,12 +162,18 @@ class XXX:
             return self.runner.id()
 
         def run(self, pairs):
-            def relative(pairs): return [(ref.relative_to(self.root), alt.relative_to(self.root)) for ref, alt in pairs]
-            def absolute(pairs): return [(self.root / ref, self.root / alt) for ref,alt in pairs ]
+            # There is a bit of a relative/absolute path hell, here's an explanation :
+            #   * Different components requires different path types
+            #   * Everything that is not touching the file system per se needs to
+            #     have relative paths : this includes the cache, benchs, etc
+            #   * However, the runners use absolute paths and
+            def rel(*paths): return tuple([path.relative_to(self.root) for path in paths])
+            def abs(*paths): return tuple([self.root / path for path in paths])
             results, remaining = self.cache.get_results(self.runner.id(), pairs)
             results_to_save = []
-            for ref, alt, dist in self.runner.run(absolute(remaining)):
+            for ref, alt, dist in self.runner.run([abs(*pair) for pair in remaining]):
+                ref, alt = rel(Path(ref), Path(alt))
                 results.append((ref, alt, dist))
-                results_to_save.append((*relative([(ref, alt)])[0], dist))
+                results_to_save.append((ref, alt, dist))
             self.cache.save_results(self.runner.id(), results_to_save)
-            return results
+            return [(*abs(ref,alt), dist) for ref,alt,dist in results ]
