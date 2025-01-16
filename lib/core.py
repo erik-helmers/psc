@@ -5,7 +5,7 @@ from typing import NamedTuple
 
 class Runner:
 
-    def id(self): return self.__class__.__name__
+    def id(self): return self.__class__.__name__.lower()
 
     def run(self, pairs):
         raise NotImplementedError()
