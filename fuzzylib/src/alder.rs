@@ -39,6 +39,7 @@ impl RollingHash<[u32], u32> for Alder {
         data.rolling_windows(self.window_size).scan(
             (W(0u32), W(0u32), W(0u32)),
             move |state, (old, new)| {
+                let Some(new) = new else { return None };
                 let (mut x, mut y, mut z) = state;
                 let (old, new) = (W(old.copied().unwrap_or(0)), W(*new));
                 let ws = W(self.window_size as _);

@@ -3,7 +3,9 @@ use crate::{tools::Slicetools, Hash, RollingHash};
 /// Shannon entropy calculation
 ///
 /// This of course, is not a hash per se, but it works well enough
-/// To consider it is one
+/// To consider it is one. Also, the window_size is compile because
+/// it let's us simplify the implementation (at the cost of worse
+/// ease of use)
 
 
 #[derive(Debug, Clone, Copy, Default)]
@@ -52,6 +54,7 @@ impl RollingHash<[u8], f64> for Shannon<64> {
     fn rolling_hash<'a>(&'a self, data: &'a [u8]) -> impl Iterator<Item=f64> + 'a {
         data.rolling_windows(Self::WINDOW_SIZE)
             .scan((0.0, [0u8;256]), |(entropy, counts), (old, new)| {
+                let Some(new) = new else { return None };
                 if old == Some(new) {return Some(*entropy);}
 
                 let mut update = |val:u8, delta: i16| {
