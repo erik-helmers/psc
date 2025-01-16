@@ -9,6 +9,9 @@ pub mod ssdeep;
 pub mod bloom;
 pub mod shannon;
 pub mod sdhash;
+
+pub mod nilsimsa;
+
 pub trait Hash<Data: ?Sized, Digest> {
     fn hash(&self, data: &Data) -> Digest;
 }
