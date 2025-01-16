@@ -11,3 +11,7 @@ itertools = "0.13.0"
 md5 = "0.7.0"
 sha1 = "0.10.6"
 triple_accel = "0.4.0"
+
+
+[workspace]
+members = ["bindings"]

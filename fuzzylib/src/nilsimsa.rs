@@ -1,4 +1,4 @@
-use bitvec::{array::BitArray, order::Lsb0, view::BitView};
+use bitvec::{array::BitArray, order::Lsb0, view::BitView as _};
 
 use crate::{pearson::Pearson, tools::Counts, FuzzyHash, Hash};
 
@@ -41,13 +41,6 @@ impl FuzzyHash<[u8], [u8;32]> for Nilsimsa {
             .count() as f64
     }
 }
-
-
-
-
-
-
-
 
 
 

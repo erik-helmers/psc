@@ -1,0 +1,15 @@
+[package]
+name = "bindings"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "fuzzylib"
+crate-type = ["cdylib"]
+
+[dependencies]
+bytemuck = "1.21.0"
+fuzzy-hash = { version = "0.1.0", path = ".." }
+pyo3 = "0.23.3"
+rayon = "1.10.0"

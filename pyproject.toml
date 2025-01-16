@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = "~=3.11"
 dependencies = [
     "ipython>=8.31.0",
+    "maturin>=1.8.1",
     "pandas>=2.2.3",
     "pyright>=1.1.392",
     "sqlalchemy>=2.0.37",

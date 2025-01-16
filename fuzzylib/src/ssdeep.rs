@@ -9,6 +9,9 @@
 //!  Carlo Jakobs*. 2022. Evaluating and improving ssdeep.
 //!  Digital Investigation 42 (2022)
 
+use bytemuck::cast_slice;
+
+use crate::FuzzyHash;
 use crate::{alder::Alder, fnv::Fnv, Hash, RollingHash};
 use crate::tools::base64;
 
@@ -64,10 +67,28 @@ impl Hash<[u32], Digest> for SSDeep {
     }
 }
 
-impl Into<String> for Digest {
-    fn into(self) -> String {
-        let sig = |sig: Vec<_>| sig.iter().map(|v| base64(*v as usize & 0x3F)).collect::<String>();
-        format!("{}:{}:{}", self.block_size, sig(self.sig1), sig(self.sig2))
+
+impl Hash<[u8], Digest> for SSDeep {
+    fn hash(&self, data: &[u8]) -> Digest {
+        //HACK: drop the extra bytes so we always get a proper &[u32]
+        let data = &data[0..data.len() & !0b11];
+        self.hash(cast_slice(data) as &[u32])
+    }
+}
+impl FuzzyHash<[u8], Digest> for SSDeep {
+    fn distance(&self, a: &Digest, b: &Digest) -> f64 {
+        let dist = triple_accel::levenshtein(
+            a.to_string().as_bytes(),
+            b.to_string().as_bytes());
+        dist as _
+    }
+}
+
+
+impl ToString for Digest {
+    fn to_string(&self) -> String {
+        let sig = |sig: &Vec<_>| sig.iter().map(|v| base64(*v as usize & 0x3F)).collect::<String>();
+        format!("{}:{}:{}", self.block_size, sig(&self.sig1), sig(&self.sig2))
     }
 }
 
@@ -80,8 +101,8 @@ mod tests {
 
     fn hash(bytes: &[u8]) -> String {
         let data : Vec<u32> = bytes.iter().map(|v| *v as u32).collect();
-        let hash =  SSDeep::default().hash(&data);
-        hash.into()
+        let hash =  SSDeep::default().hash(&data as &[u32]);
+        hash.to_string()
     }
 
     #[test]

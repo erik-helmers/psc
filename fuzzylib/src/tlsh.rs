@@ -1,11 +1,11 @@
 use crate::{pearson::Pearson, tools::Counts, FuzzyHash, Hash};
 
 #[derive(Default, Clone, Copy)]
-struct Tlsh;
+pub struct Tlsh;
 
 // TODO: Implement the headers q_ratio
 #[derive(Debug)]
-struct Digest {
+pub struct Digest {
     hist: [u8; 256],
 }
 
