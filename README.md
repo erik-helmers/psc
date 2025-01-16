@@ -28,9 +28,9 @@ Out[2]: <function ssdeep.batch_hash(pairs)>
 
 ## Build, run, debug
 
-- Pour lancer l'interface web : 
+- Pour lancer jupyter : 
     ```sh
-    #TODO:
+    uv run jupyter lab . 
     ```
 
 - Pour un REPL : 
