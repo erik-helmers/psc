@@ -14,6 +14,8 @@ pub mod nilsimsa;
 
 pub mod pearson;
 pub mod tlsh;
+
+pub mod sise;
 pub trait Hash<Data: ?Sized, Digest> {
     fn hash(&self, data: &Data) -> Digest;
 }
