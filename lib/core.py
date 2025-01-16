@@ -15,9 +15,10 @@ class Runner:
 
 class Benchmark:
 
-    def __init__(self, id, pairs):
+    def __init__(self, id, pairs, metadata):
         self._id = id
         self._pairs = pairs
+        self._metadata = metadata
 
     def id(self) -> str:
         return self._id
@@ -25,17 +26,24 @@ class Benchmark:
     def pairs(self):
         return self._pairs
 
+    def metadata(self, path):
+        return self._metadata
+
     """ Create a new Benchmark instance from the specified root path (relative to
         the benchmarks root directy) """
     @staticmethod
     def from_path(path: Path):
-        files = list(filter(Path.is_file, path.iterdir())))
+        files = list(filter(Path.is_file, path.iterdir()))
+        metadata = {
+            path: Benchmark.path_metadata(path)
+            for path in files
+        }
         pairs = [
             (Benchmark.path_reference(path), path)
             for path in files
-            if not Benchmark.path_metadata(path).get('ref')
+            if not metadata[path].get('ref')
         ]
-        return Benchmark(str(path), pairs)
+        return Benchmark(str(path), pairs, metadata)
 
     @staticmethod
     def path_metadata(path):
@@ -67,6 +75,8 @@ class XXX:
         self.root = data_root
         self.benchmarks = benchmarks
         self.runners = runners
+        self.cache = cache
+
 
     def benchmarks(self):
         return list(map(Benchmark.id, self.benchmarks))
@@ -74,15 +84,31 @@ class XXX:
     def runners(self):
         return list(map(Runner.id, self.runners))
 
+
     """
     All of this library revolves around this method : given some runners
     (ie. some fuzzy-hash implementations), we run a bunch of benchmarks
     and we return the results as a dataframe containing the following :
        - `algo` : the id of the algo that provided this result
        - `bench`: the id of the benchmark that was used
-       - `ref` : the reference file (ie. a path relative to the bench root)
-       - `alt` : the alternative file (ie. a path relative to the bench root)
+       - `ref`  : the reference file (ie. a path relative to the bench root)
+       - `alt`  : the alternative file (ie. a path relative to the bench root)
+       - `mods` : the metadata about the relation between `ref` and `alt`
        - `dist` : the distance (a float) as computed by the runner
     """
     def run(self, runners, benchs) -> pd.DataFrame :
-        pass
+        rows = []
+        for runner in runners:
+            for bench in benchs:
+                results, remaining = self.cache.get_results(runner, bench)
+                results_to_save = []
+                for ref, alt, dist in runner.run(remaining):
+                    results.append((ref, alt, dist))
+                    results_to_save.append((ref, alt, dist))
+                self.cache.save_results(runner.id(), results_to_save)
+                rows.extend([
+                    (runner.id(), bench.id(), ref, alt, bench.metadata()[alt], dist)
+                    for ref, alt, dist in results
+                ])
+        df = pd.DataFrame(rows, columns=['algo', 'bench', 'ref', 'alt', 'mods', 'dist'])
+        return df

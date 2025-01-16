@@ -30,6 +30,15 @@ class DbResult(Base):
         return (f"Result(runner='{self.runner}', ref='{self.ref}', "
                 f"alt='{self.alt}', dist={self.dist})")
 
+    @staticmethod
+    def from_result(runner, res):
+        ref, alt, dist = res
+        return DbResult(
+            runner=runner,
+            ref=ref,
+            alt=alt,
+            dist=dist)
+
 def session_from_path(path: Path):
     url = f"sqlite:///{str(path)}"
     engine = create_engine(url, echo=False)
@@ -42,9 +51,11 @@ class Cache:
         if session is None: session = sessionmaker(bind=create_engine("sqlite://", echo=True))()
         self.session = session
 
-    def save_results(self, results):
-        results = list(map(DbResult.from_result, results))
-        self.session.bulk_save_objects(results)
+    def save_results(self, runner:str, results:tuple[Path, Path, float]):
+        self.session.bulk_save_objects([
+            DbResult.from_result(runner, res)
+            for res in results
+        ])
         self.session.commit()
 
     def get_results(self, runner, bench):
@@ -53,6 +64,6 @@ class Cache:
             .filter(tuple_(DbResult.ref, DbResult.alt).in_(pairs))
             .all())
 
-        output = [Result(runner, bench, ref, alt, dist) for ref, alt, dist in rows]
-        remaining = set(bench.pairs()) - set((res.ref, res.alt) for res in output)
-        return output, Benchmark(f'partial-{bench.id()}', list(remaining))
+        output = [(ref, alt, dist) for ref, alt, dist in rows]
+        remaining = list(set(bench.pairs()) - set((ref, alt) for (ref, alt, _) in output))
+        return output, remaining
