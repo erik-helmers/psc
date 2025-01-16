@@ -534,6 +534,7 @@ dependencies = [
     { name = "jupyterthemes" },
     { name = "maturin" },
     { name = "pandas" },
+    { name = "progress" },
     { name = "pygwalker" },
     { name = "pyright" },
     { name = "sqlalchemy" },
@@ -550,6 +551,7 @@ requires-dist = [
     { name = "jupyterthemes", specifier = ">=0.20.0" },
     { name = "maturin", specifier = ">=1.8.1" },
     { name = "pandas", specifier = ">=2.2.3" },
+    { name = "progress", specifier = ">=1.6" },
     { name = "pygwalker", specifier = ">=0.4.9.13" },
     { name = "pyright", specifier = ">=1.1.392" },
     { name = "sqlalchemy", specifier = ">=2.0.37" },
@@ -1525,6 +1527,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/e5/69/882ee5c9d01714928
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl", hash = "sha256:096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce", size = 49567 },
 ]
+
+[[package]]
+name = "progress"
+version = "1.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/2a/68/d8412d1e0d70edf9791cbac5426dc859f4649afc22f2abbeb0d947cf70fd/progress-1.6.tar.gz", hash = "sha256:c9c86e98b5c03fa1fe11e3b67c1feda4788b8d0fe7336c2ff7d5644ccfba34cd", size = 7842 }
 
 [[package]]
 name = "prometheus-client"

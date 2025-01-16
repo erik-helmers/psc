@@ -15,6 +15,12 @@ cd fuzzylib/bindings
 maturin develop --uv 
 ```
 
+Générer les benchmarks : 
+``` sh
+uv run ./benchgen/image.py data/image benchgen/image/*
+uv run ./benchgen/text.py data/text benchgen/text/{proposition.ref.txt,*}
+```
+
 Vérifier que tout fonctionne en lançant une console : 
 ``` sh
 uv run ipython 

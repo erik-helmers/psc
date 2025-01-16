@@ -1,0 +1,212 @@
+10 | TLSH - A Locality Sensitive Hash
+Without loss of generality, consider the situation of x1=0 and y1=3. We derive the parameter 6 by
+considering the binomial situation when p=.25 and n=3. The probability of getting an event is
+Prob(k=3 | n=3; p=0.25) =(n
+k) pk (1 - p)n-k
+=0.0156
+As noted in [2], the scoring of the hamming distance is equivalent to the negative logarithm to base two
+of the probability of the events.
+-log2(Prob(k=3 | n=3; p=0.25)) = 6
+And hence the parameter in the distance_bodies() function for the situation is 6.
+The distance calculated by the distance_headers() function also has a parameter. This time the range
+of the binomial trials implied by the mod_diff() function is 16 for the qratios and 256 for the length. It is
+not clear which distribution these parameters will follow  it will depend on the security application under
+consideration. We considered two approaches for deciding the parameters to use in the distance_
+header() function. The first approach was to extend the binomial argument used above to the case of
+n=15 and p=1/16. This leads to a multiplier parameter of 3. The second approach was to plot the relative
+occurrence of similar files having different qratios and lvalues. Inspecting the plots resulted in us selecting
+a multiplier parameter of 12. Ideally, the multiplier parameter should be selected based on trials for the
+data under consideration. For example executable files, image files, text files and source code have a
+different distribution for the qratios and the lvalues. Based on the results in the next section, a choice of
+12 for the multiplier parameter is fairly robust. We also note that the open source software [12] allows the
+user to select options such as turning off any penalty for different lvalues.
+The use of the checksum in the distance_headers() function was to make sure that digests from near
+collisions have a distance score greater than 0.
+The computation of this score can be significantly sped up by the use of pre-calculated tables, which is
+implemented in the software [12].
+11 | TLSH - A Locality Sensitive Hash
+Results
+The TLSH scheme described has been implemented and source code has been made available online
+[12]. Here we present some comparisons with Ssdeep [3], Sdhash [5] and Nilsimsa [10].
+ROC Analysis
+We collected a set of files that we knew were distinct: 109 binary malware files from different malware
+families, 290 randomly constructed HTML fragments, 100 pieces of random text selected from the Unix
+dictionary (with no overlap) and 79 distinct text files about different topics.
+We collected a set of files where we knew that the files are similar. This set included 20 binary files from
+the TROJ_DROPPER malware family, 20 binary files from the TROJ_ZLOB malware family, 20 binary files
+from the WORM_SOBER malware family. We took each of the 79 distinct text files and mutated it into 14
+variations for a total of 15 similar files. Five of the 14 variations had a word selected and globally replaced
+by another random word selected from the text files. Three variations were created by using the Unix fmt
+command changing the formatting of the text file to have a width of 40, 60 and 80 characters. Five further
+variations were created by reformatting the file, and then globally replacing a random word with another
+random word selected from the text files. One of the 14 variations was constructed by using the Unix sort
+--random-sort to randomly sort the lines of the file.
+The gold standard for this data set was a total of 8766 similar file comparisons and a total of 55822
+different file comparisons. Ssdeep, Sdhash, Nilsimsa and TLSH were used to determine the similarity
+and distance scores for the respective methods. Tables 1 and 2 give a range of thresholds and the false
+positive rate and detection rate for each of the schemes.
+The size of the data sets is relatively modest because it was important to check many of the pairs of files
+by hand; to ensure that errors had not crept into the analysis.
+12 | TLSH - A Locality Sensitive Hash
+Sdhash Ssdeep
+Score FP rate Detect rate Score FP rate Detect rate
+> 0 0.04711% 37.1% > 0 0.09966% 31.2%
+> 5 0.02718% 36.6% > 5 0.09785% 31.2%
+> 10 0.02174% 36.1% > 10 0.09603% 31.2%
+> 20 0.01812% 35.4% > 20 0.09422% 31.2%
+> 30 0.01268% 34.4% > 30 0.05617% 30.9%
+> 40 0.00544% 32.7% > 40 0.01812% 29.3%
+> 50 0.00362% 29.7% > 50 0.00362% 27.3%
+> 60 0.00362% 26.0% > 60 0.00362% 25.9%
+> 70 0.00181% 18.8% > 70 0.00181% 23.1%
+> 80 0.00181% 12.4% > 80 0.00000% 16.2%
+> 90 0.00181% 4.6% > 90 0.00000% 8.8%
+> 99 0.00000% 1.0% > 99 0.00000% 3.5%
+Table 1. False positive and detection rates for Sdhash and Ssdeep
+TLSH Nilsimsa
+Score FP rate Detect rate Score FP rate Detect rate
+< 300 79.30% 98.8% > 120 99.86% 100.0%
+< 250 69.06% 98.8% > 130 99.20% 100.0%
+< 200 50.10% 98.8% > 140 98.11% 100.0%
+< 150 24.33% 98.1% > 150 96.98% 100.0%
+< 100 6.43% 94.5% > 160 94.26% 100.0%
+< 90 4.49% 92.3% > 170 89.52% 100.0%
+< 80 2.93% 89.0% > 180 81.38% 100.0%
+< 70 1.84% 83.6% > 190 69.69% 99.7%
+< 60 1.09% 76.0% > 200 54.45% 98.8%
+< 50 0.52% 65.3% > 210 36.73% 96.4%
+< 40 0.07% 49.6% > 220 18.29% 91.9%
+< 30 0.00181% 32.2% > 230 5.52% 72.0%
+< 20 0.00181% 17.3% > 240 1.26% 35.2%
+< 10 0.00181% 6.4% > 250 0.49% 9.5%
+Table 2. False positive and detection rates for tlsh and the Nilsimsa hash
+13 | TLSH - A Locality Sensitive Hash
+We note the following from the tables:
+ The schemes have different scoring ranges. TLSH distance scores go up to 300 (and can potentially
+go up to over 1000). Sdhash and Ssdeep similarity scores are restricted to the range 0-100.
+ The Nilsimsa hash typically gives scores in the range 128-256  and rarely goes below 128. A Nilsimsa
+score of 128 can be interpreted as meaning the files are completely different, while a score of 256
+means the files are very similar.
+ The Sdhash and Ssdeep schemes have very low false positive rates for all sensible thresholds, but
+have a significantly lower range for their detection rate.
+ The TLSH scheme has very low false positive detection capabilities at thresholds <= 30 and very high
+detection rates for thresholds closer to 100. Of the four schemes, it is the only scheme which allows
+for the user to select a threshold which enables tradeoffs to be made between false positive rates and
+detection rates.
+ The Nilsimsa scheme has very strong capabilities for detecting similar files, but suffers from significantly
+higher false positive rates. We note that the results of the Nilsimsa scheme are strictly worse than the
+TLSH scheme  so we drop the Nilsimsa scheme from further consideration.
+We took the false positive and true positive rates for three of the schemes and created a ROC curve (for
+clarity we have removed the Nilsimsa scheme since it is not a competitive scheme). Fig. 1 shows the ROC
+curve where the scoring threshold was systematically varied to determine whether two files were a match
+or not.
+The ROC curve highlights a deficiency in the Sdhash and Ssdeep schemes. Limiting the scoring to 0-100
+has resulted in schemes where there is no available threshold for many useful cases.
+Figure 1. ROC Curve
+1
+.5
+0
+0 .5 1
+TLSH
+Sdhash
+Ssdeep
+14 | TLSH - A Locality Sensitive Hash
+For the Sdhash and Ssdeep schemes, this results in a ROC curve which abruptly changes in nature once
+the threshold hits the score of 1. It is not a sensible use of these schemes to use a threshold of 0  since
+that is equivalent to asserting that all files are similar. From Table 1, we see that at a threshold of 1, Sdhash
+has a false positive rate of 0.047% and a detection rate of 37.1%. At a threshold of 0, Sdhash has a false
+positive rate of 100% and a detection rate of 100%. There are no thresholds available between these
+extremes. We have drawn in this point on the ROC diagram so that we can calculate the ROC area.
+The ROC area for each of the methods is shown in Table 3. We list the areas under the curves as a
+standard part of a ROC analysis, while noting that the areas for the Sdhash and Ssdeep schemes were
+dominated by the limitation on thresholds noted above.
+TLSH Sdhash Ssdeep
+Area under
+ROC curve 0.9775 0.6855 0.6555
+Table 3. Area under ROC curve
+The value in doing the ROC analysis was twofold:
+1. It established that the various choices about the algorithm and parameters made in Sections 2 and 3
+created a robust scheme.
+2. It identified that using a scoring range of 0-100 created limitations for the Sdhash and Ssdeep
+schemes.
+Systematically Changing a File
+We started with the first 500 lines of Pride and Prejudice (pg1342.txt from [9]). We created 500 versions of
+this text, each one more `different` from the original text than the previous.
+100
+50
+0
+0 100 200
+TLSH
+Sdhash
+Ssdeep
+Figure 2. The scores on mutations of the first 500 lines of Pride and Prejudice.
+15 | TLSH - A Locality Sensitive Hash
+The changes we introduced were random, and consisted of performing one of the following changes:
+1. inserting a new word,
+2. deleting an existing word,
+3. swapping two words,
+4. substituting a word for another word,
+5. replacing 10 occurrences of a character for another character, or
+6. deleting 10 occurrences of a character.
+The scores comparing the original text with the files generated by this process for Ssdeep, Sdhash and
+TLSH are shown below in Fig. 2.
+We then applied the same approach to the entire text of Pride and Prejudice (13426 lines containing
+704,146 bytes). We again iteratively applied changes. Due to the size of the book, at each iteration we
+would do one of the following transactions:
+A. apply 40 of the changes (1-6) described above,
+B. swap two sections containing 5-25 lines, or
+C. delete 5-25 lines.
+The scores comparing the original text with the files generated by this process for Ssdeep, Sdhash and
+TLSH are shown below in Fig. 3.
+Figure 3. The scores on mutations of entire text of Pride and Prejudice.
+100
+50
+0
+0 100 200
+TLSH
+Sdhash
+Ssdeep
+16 | TLSH - A Locality Sensitive Hash
+In both Fig. 2 and Fig. 3, the Ssdeep and Sdhash similarity scores go down from 100 to 0, while the distance
+score for TLSH grows. In both graphs, well after the Ssdeep and Sdhash methods have scored the files
+as being distinct (a score of 0), the TLSH method is giving distance scores which can be interpreted as
+saying the files are `similar` (in the range of 10 to 40).
+Alarmingly for the Ssdeep method, in Fig. 3, the Ssdeep score immediately goes to zero after the 2nd
+iteration of changes to the text. At this point the Unix diff command can determine that the files are very
+similar  only 153 changes have occurred and the first change does not occur until line 44 out of 13426
+lines.
+A visual inspection of the files agrees with the TLSH scores. After 150 iterations of the process, where
+both Sdhash and Ssdeep have failed to identify the files as being similar, a human reader can still say
+with confidence that the text is the start of Pride and Prejudice. The first paragraph of the 150th iteration
+of this process is shown in Fig. 4.
+PRIDE AND PREJUDICE
+By Jane Austen
+Chapter 1
+It is a truth universally aiknowledged,
+younarenangreatndealntoonapt,nyoun-
+know, a single man in possession of a
+good fortune, must be in want of a wife.
+Figure 4. The first paragraph of the 150th iteration of the mutation process.
+Performance
+We performed a comparison of the speed of the TLSH code. Table 4 below shows the TLSH performance
+on Ubuntu machine (Intel Pentium 4 CPU 3.40 GHz, 4G RAM) compared to MD5, SHA-1 and Ssdeep.
+The input data length is 4096 bytes, and the times were averaged over 10,000 computations of the hash.
+Method Average time
+(microsecond)
+TLSH 286
+MD5 38
+SHA1 53
+Ssdeep 265
+Table 4. Average speed for calculating the digests
+The speed of TLSH is about the same as Ssdeep.
+17 | TLSH - A Locality Sensitive Hash
+Conclusion
+This paper has described the TLSH approach based on Locality Sensitive Hashing for implementing
+similarity digests. The approach described here has been released as open source code [12].
+The ROC analysis highlighted a significant problem with the range of values which the Sdhash and Ssdeep
+similarity score can take. Restricting this to a range of 0-100 limits the usefulness of the schemes.
+The TLSH scheme described has outperformed available digest methods for identifying similar documents,
+especially for applications where missed detections are of concern and false alarms are acceptable. The
+TLSH method shows distinct advantages in the nature of its ROC curve, and therefore has a wider range
+of computer security applications. The empirical evaluation highlights significant problems with previously
+proposed schemes.
