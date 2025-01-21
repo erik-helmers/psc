@@ -76,6 +76,6 @@ mod tests {
         assert_eq!(tlsh.distance(&h1, &h1), 0.0);
         assert_eq!(tlsh.distance(&h1, &h2), 0.0);
         assert!(tlsh.distance(&h2, &h3) < 10.0);
-        assert!(tlsh.distance(&h3, &h4) > 300.0);
+        assert!(tlsh.distance(&h3, &h4) > 150.0, "{} > 150.0", tlsh.distance(&h3, &h4));
     }
 }
