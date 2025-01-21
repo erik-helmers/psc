@@ -45,7 +45,7 @@ Générer les benchmarks :
 mkdir -p data/benchmarks/{image,text} 
 # Génération des benchmarks
 uv run ./benchgen/image.py data/benchmarks/image  benchgen/image/*
-uv run ./benchgen/text.py  data/benchmarks/text   benchgen/text/{proposition.ref.txt,*}
+uv run ./benchgen/text.py  data/benchmarks/text   benchgen/text/{proposition.txt,*}
 ```
 
 Vérifier que tout fonctionne en lançant une console : 

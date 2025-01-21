@@ -5,6 +5,7 @@ description = "Plateforme de test fuzzy hashing"
 readme = "README.md"
 requires-python = "~=3.11"
 dependencies = [
+    "ipympl>=0.9.6",
     "ipython>=8.31.0",
     "jupyterthemes>=0.20.0",
     "maturin>=1.8.1",
