@@ -8,11 +8,12 @@ name: CI
 on:
   push:
     branches:
-      - main
       - master
     tags:
       - '*'
-  pull_request:
+    paths:
+      - 'fuzzylib/bindings/src/**'
+      - 'fuzzylib/bindings/Cargo.toml'
   workflow_dispatch:
 
 permissions:
@@ -26,16 +27,16 @@ jobs:
         platform:
           - runner: ubuntu-22.04
             target: x86_64
-          - runner: ubuntu-22.04
-            target: x86
-          - runner: ubuntu-22.04
-            target: aarch64
-          - runner: ubuntu-22.04
-            target: armv7
-          - runner: ubuntu-22.04
-            target: s390x
-          - runner: ubuntu-22.04
-            target: ppc64le
+          # - runner: ubuntu-22.04
+          #   target: x86
+          # - runner: ubuntu-22.04
+          #   target: aarch64
+          # - runner: ubuntu-22.04
+          #   target: armv7
+          # - runner: ubuntu-22.04
+          #   target: s390x
+          # - runner: ubuntu-22.04
+          #   target: ppc64le
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -55,37 +56,37 @@ jobs:
           name: wheels-linux-${{ matrix.platform.target }}
           path: fuzzylib/bindings/dist
 
-  musllinux:
-    runs-on: ${{ matrix.platform.runner }}
-    strategy:
-      matrix:
-        platform:
-          - runner: ubuntu-22.04
-            target: x86_64
-          - runner: ubuntu-22.04
-            target: x86
-          - runner: ubuntu-22.04
-            target: aarch64
-          - runner: ubuntu-22.04
-            target: armv7
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-      - name: Build wheels
-        uses: PyO3/maturin-action@v1
-        with:
-          target: ${{ matrix.platform.target }}
-          args: --release --out dist --find-interpreter
-          sccache: 'true'
-          manylinux: musllinux_1_2
-          working-directory: fuzzylib/bindings
-      - name: Upload wheels
-        uses: actions/upload-artifact@v4
-        with:
-          name: wheels-musllinux-${{ matrix.platform.target }}
-          path: fuzzylib/bindings/dist
+  # musllinux:
+  #   runs-on: ${{ matrix.platform.runner }}
+  #   strategy:
+  #     matrix:
+  #       platform:
+  #         - runner: ubuntu-22.04
+  #           target: x86_64
+  #         - runner: ubuntu-22.04
+  #           target: x86
+  #         - runner: ubuntu-22.04
+  #           target: aarch64
+  #         - runner: ubuntu-22.04
+  #           target: armv7
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-python@v5
+  #       with:
+  #         python-version: 3.x
+  #     - name: Build wheels
+  #       uses: PyO3/maturin-action@v1
+  #       with:
+  #         target: ${{ matrix.platform.target }}
+  #         args: --release --out dist --find-interpreter
+  #         sccache: 'true'
+  #         manylinux: musllinux_1_2
+  #         working-directory: fuzzylib/bindings
+  #     - name: Upload wheels
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: wheels-musllinux-${{ matrix.platform.target }}
+  #         path: fuzzylib/bindings/dist
 
   windows:
     runs-on: ${{ matrix.platform.runner }}
@@ -94,8 +95,8 @@ jobs:
         platform:
           - runner: windows-latest
             target: x64
-          - runner: windows-latest
-            target: x86
+          # - runner: windows-latest
+          #   target: x86
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -120,8 +121,8 @@ jobs:
     strategy:
       matrix:
         platform:
-          - runner: macos-13
-            target: x86_64
+          # - runner: macos-13
+          #   target: x86_64
           - runner: macos-14
             target: aarch64
     steps:
