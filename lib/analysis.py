@@ -1,5 +1,7 @@
 from pathlib import Path
 from functools import reduce
+from collections import defaultdict
+import numpy as np
 
 def pretty(df):
     df['ref'] = df['ref'].apply(lambda x: Path(x).name)
@@ -27,3 +29,13 @@ def long(df):
 def suffix(df):
     df['suffix'] = df['ref'].apply(lambda x: x.rsplit('.')[-1])
     return df
+
+
+
+""" Compute the histogram of n-grams in the binary blob """
+def ngrams(n, bytes_):
+    out = np.zeros([256]*n, dtype=np.uint32)
+    for i in range(len(bytes_)-n+1):
+        out[tuple(bytes_[i:i+n])] += 1
+    return out
+

@@ -11,12 +11,12 @@ class Action:
         self.factors = args
 
     def name(self):
-        base = re.sub(r'(?<!^)([A-Z])', r'_\1', self.__class__.__name__).lower() # to snake_case
+        # convert action name to snake_case
+        base = re.sub(r'(?<!^)([A-Z])', r'_\1', self.__class__.__name__).lower()
         params = '-'.join(map(str, self.factors))
         return base + ( '-' + params if params else '' )
 
-    def run(self, inp: Path, out_dir = None):
-        if out_dir is None: out_dir = inp.parent
+    def run(self, inp: Path, out_dir):
         out = out_dir / (inp.stem + "." + self.name() + inp.suffix)
         self.apply(inp, out)
 
