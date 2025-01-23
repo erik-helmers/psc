@@ -1,4 +1,4 @@
-from .core import Result, Benchmark
+from .core import Benchmark
 from pathlib import Path
 from sqlalchemy import String, Float, create_engine, Column, tuple_
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, sessionmaker, Session

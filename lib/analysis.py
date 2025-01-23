@@ -7,8 +7,14 @@ def pretty(df):
     df['ref'] = df['ref'].apply(lambda x: Path(x).name)
     df['alt'] = df['alt'].apply(lambda x: Path(x).name)
 
+    df = with_mods(df)
     df = suffix(df)
     df = wide(df)
+    return df
+
+def with_mods(df):
+    df['mods'] = df['meta'].apply(lambda x: {
+        k: x[k]  for k in x.keys() - {"ref", "alt", "dist"}})
     return df
 
 def wide(df):
