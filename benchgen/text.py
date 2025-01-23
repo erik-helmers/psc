@@ -51,7 +51,7 @@ def main():
     ref = Path(sys.argv[2])
     paths = list(map(Path, sys.argv[3:]))
 
-    pourcentage_dilution = [0.1, 0.3, 0.5, 0.7, 1] # A 10% dilution for a 1,000 characters text is an addition of 100 characters
+    pourcentage_dilution = [0.1, 0.3, 0.5, 0.7, 0.9] #A 10% dilution for a 1,000 characters text is an addition of 100 characters
     nb_blocks = [1, 10, 100, 1000]
     dilution_factors = [(nb_block, int(30000*percentage/nb_block)) for percentage in pourcentage_dilution for nb_block in nb_blocks]
     actions = [Ref()] + [Add(ref, nb_blocks, size_blocks) for (nb_blocks, size_blocks) in dilution_factors] # Texts are 
