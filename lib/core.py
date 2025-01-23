@@ -7,53 +7,65 @@ class Runner:
 
     def id(self): return self.__class__.__name__.lower()
 
-    def run(self, pairs: list[tuple[Path, Path]]) -> list[tuple[Path, Path, float]]:
+    def run(self, bench):
         raise NotImplementedError()
 
-
-
-class HashDistRunner(Runner):
-    """ Use this runner when you simply need to hash  the
-        files then compare your hashes
+class PairRunner(Runner):
+    """ Use this when you just want the ref/alt paths absolute paths and will
+        return them in the form ref/alt/dist
     """
-    def __init__(self):
-        self.artifacts = dict()
+    def run(self, bench):
+        pairs = bench.pairs(absolute=True, skip_computed=True)
+        res = self.run_on_pairs(pairs)
+        for ref,alt,dist in res:
+            bench.attrs(ref,alt).dist = dist
 
-    def run(self, pairs):
-        for ref, alt in pairs:
-            href = self._get_or_compute(ref, self.hash)
-            halt = self._get_or_compute(alt, self.hash)
-            yield (ref, alt, self.distance(href, halt))
-
-    def hash(self, path):
-        """Given a path name, return its hash"""
+    def run_on_pairs(self, pairs):
         raise NotImplementedError("Override me!")
 
 
-    def distance(self, href, halt):
-        """Given two hashes, return their distances"""
-        raise NotImplementedError("Override me!")
+class Entry:
 
-    def _get_or_compute(self, key, compute):
-        if key not in self.artifacts: self.artifacts[key] = compute(key)
-        return self.artifacts[key]
+    def __init__(self, ref, alt):
+        self.ref = ref
+        self.alt = alt
+        self.dist = None
+
+    @staticmethod
+    def from_dict(d):
+        out = Entry(d['ref'], d['alt'])
+        for k,v in d.items():
+            if k not in ['ref', 'alt']: setattr(out, k, v)
+        return out
 
 class Benchmark:
 
-    def __init__(self, id, pairs, metadata):
+    def __init__(self, id, root, entries):
         self._id = id
-        self._pairs = pairs
-        self._metadata = metadata
+        self._root = root
+        self._entries = {(e.ref,e.alt): e for e in entries}
 
     def id(self) -> str:
         return self._id
 
-    def pairs(self, /, root=None):
-        if root is None: return self._pairs
-        else: return [(root/ref, root/alt) for ref, alt in self._pairs]
+    def pairs(self, /, absolute, skip_computed=False):
+        """ Get pairs of refpath / altpath of this benchmark """
+        if absolute:
+            return [(self._root/ref, self._root/alt) for ref, alt in self.pairs(absolute=False)]
+        else:
+            return [k for (k, entry) in self._entries.items() if not skip_computed or entry.dist is not None ]
 
-    def metadata(self, path: Path):
-        return self._metadata[path]
+    def entries(self):
+        return self._entries.values()
+
+    def attrs(self, ref: Path, alt: Path):
+        if ref.is_relative_to(self._root): ref = ref.relative_to(self._root)
+        if alt.is_relative_to(self._root): alt = alt.relative_to(self._root)
+        return self._entries[(ref,alt)]
+
+    def copy(self):
+        from copy import deepcopy
+        return deepcopy(self)
 
     """ Create a new Benchmark instance from the specified root path (relative to
         the benchmarks root directy) """
@@ -65,18 +77,18 @@ class Benchmark:
             if p.is_file()
         ]
         metadata = {
-            path: Benchmark.path_metadata(path)
+            path: Benchmark.metadata_from_path(path)
             for path in files
         }
-        pairs = [
-            (Benchmark.path_reference(path), path)
+        entries = [
+            Entry.from_dict({ **metadata[path], 'ref': Benchmark.reference_from_path(path), 'alt': path })
             for path in files
             if not metadata[path].get('ref')
         ]
-        return Benchmark(str(path.relative_to(root/"benchmarks")), pairs, metadata)
+        return Benchmark(str(path.relative_to(root/"benchmarks")), root, entries)
 
     @staticmethod
-    def path_metadata(path):
+    def metadata_from_path(path):
         modlist = path.stem.split('.')[1:]
         mods : dict[str,object]= {}
         for mod in modlist :
@@ -87,17 +99,9 @@ class Benchmark:
         return mods
 
     @staticmethod
-    def path_reference(path) -> Path :
+    def reference_from_path(path) -> Path :
         return path.parent / (path.stem.split('.')[0] + '.ref' + path.suffix)
 
-
-Result = NamedTuple("Result", [
-    ('runner', str),
-    ('bench', str),
-    ('ref', Path),
-    ('alt', Path),
-    ('dist', float),
-])
 
 class Core:
 
@@ -140,31 +144,32 @@ class Core:
 
     Options:
       - `bypass_cache`: don't use the cache in any way
-      - `recompute_cache`: drop the previously cached results
+      - `recompute_cache`: drop the previously cached results: Broken
     """
     def run(self, runners: list[str], benchs: list[str],
             bypass_cache=False, recompute_cache=False) -> pd.DataFrame :
         print(f"Running {runners} with benchs {benchs}")
-        def rel(path): return path.relative_to(self.root)
-        def abs(path): return self.root / path
         rows = []
         for runner_id in runners:
             for bench_id in benchs:
                 runner= self.__runner_by_id(runner_id)
-                bench = self.__benchmark_by_id(bench_id)
+                bench = self.__benchmark_by_id(bench_id).copy()
 
                 if not bypass_cache and not recompute_cache:
                     runner = Core.CachedRunner(self.root, self._cache, runner)
 
-                results = runner.run(bench.pairs(root=self.root))
+                runner.run(bench)
                 rows.extend([
                     (runner.id(), bench.id(),
-                     rel(ref), rel(alt),bench.metadata(rel(alt)), dist)
-                    for ref, alt, dist in results
+                     e.ref, e.alt, e.dist, vars(e))
+                    for e in bench._entries.values()
                 ])
 
-                if recompute_cache: self._cache.update_results(runner.id(), results)
-        df = pd.DataFrame(rows, columns=['algo', 'bench', 'ref', 'alt', 'mods', 'dist'])
+                if recompute_cache:
+                    results = [(e.ref, e.alt, e.dist) for e in bench.entries()]
+                    self._cache.update_results(runner.id(), results)
+
+        df = pd.DataFrame(rows, columns=['algo', 'bench', 'ref', 'alt', 'dist', 'meta'])
         return df
 
 
@@ -177,19 +182,14 @@ class Core:
         def id(self):
             return self.runner.id()
 
-        def run(self, pairs):
-            # There is a bit of a relative/absolute path hell, here's an explanation :
-            #   * Different components requires different path types
-            #   * Everything that is not touching the file system per se needs to
-            #     have relative paths : this includes the cache, benchs, etc
-            #   * However, the runners use absolute paths and
-            def rel(*paths): return tuple([path.relative_to(self.root) for path in paths])
-            def abs(*paths): return tuple([self.root / path for path in paths])
-            results, remaining = self.cache.get_results(self.runner.id(), [rel(*pair)  for pair in pairs])
-            results_to_save = []
-            for ref, alt, dist in self.runner.run([abs(*pair) for pair in remaining]):
-                ref, alt = rel(ref, alt)
-                results.append((ref, alt, dist))
-                results_to_save.append((ref, alt, dist))
-            self.cache.save_results(self.runner.id(), results_to_save)
-            return [(*abs(ref,alt), dist) for ref,alt,dist in results ]
+        def run(self, bench):
+            results, _ = self.cache.get_results(self.runner.id(), bench.pairs(absolute=False))
+
+            for ref,alt,dist in results:
+                bench.attrs(ref,alt).dist = dist
+
+            new_pairs = bench.pairs(absolute = False, skip_computed=True)
+            print(f"{len(results)} cache hit for {self.runner.id()} on {bench.id()}")
+            self.runner.run(bench)
+            new_results = [(ref,alt,bench.attrs(ref,alt).dist) for ref,alt in new_pairs]
+            self.cache.save_results(self.runner.id(), new_results)

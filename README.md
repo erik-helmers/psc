@@ -54,7 +54,7 @@ Out[2]: <function ssdeep.batch_hash(pairs)>
 Générer les benchmarks : 
 ``` sh
 # Créations des dossiers 
-$ mkdir -p data/benchmarks/{image,text, noise} 
+$ mkdir -p data/benchmarks/{image,text,noise} 
 # Génération des benchmarks
 $ uv run ./benchgen/image.py  data/benchmarks/image   benchgen/image/*
 $ uv run ./benchgen/text.py   data/benchmarks/text    benchgen/text/*
