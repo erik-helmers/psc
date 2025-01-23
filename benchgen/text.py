@@ -43,25 +43,7 @@ class Add(TextAction):
         return "".join(output)
 
 
-class Swap(TextAction):
-    nargs = 2
-    def name(self):
-        no_blocks, block_size = self.factors
-        return f"swap_bn-{no_blocks}.swap_bs-{block_size}"
 
-    def transform(self, text: str):
-        no_blocks, block_size = self.factors
-
-        locations = set() # Locations where to add text
-        while len(locations) < no_blocks: locations.add(random.randint(0,len(text)-1))
-
-        output = list(text)
-        for i,loc in enumerate(locations):
-            start = random.randint(0,len(self.aux)-block_size) # We take the sequence doc2[start:start+size]
-            insert = loc+i*block_size
-            output[insert:insert+block_size] = self.aux[start:start+block_size]
-
-        return "".join(output)
 
 def main():
     out_dir = Path(sys.argv[1])
@@ -69,8 +51,11 @@ def main():
     ref = Path(sys.argv[2])
     paths = list(map(Path, sys.argv[3:]))
 
-    actions = [Ref(), Swap(ref, 8, 1000), Swap(ref, 1000, 8), Add(ref, 8, 1000), Add(ref, 1000, 8)]
-
+    pourcentage_dilution = [0.1, 0.3, 0.5, 0.7, 1] # A 10% dilution for a 1,000 characters text is an addition of 100 characters
+    nb_blocks = [1, 10, 100, 1000]
+    dilution_factors = [(nb_block, int(30000*percentage/nb_block)) for percentage in pourcentage_dilution for nb_block in nb_blocks]
+    actions = [Ref()] + [Add(ref, nb_blocks, size_blocks) for (nb_blocks, size_blocks) in dilution_factors] # Texts are 
+    # roughly 30,000 characters long
     bar = progress.bar.IncrementalBar('Generating', max=len(actions) * len(paths))
     for path in paths:
         for action in actions:
