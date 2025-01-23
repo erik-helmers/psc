@@ -49,10 +49,14 @@ class Benchmark:
         return self._id
 
     def pairs(self, /, absolute, skip_computed=False):
+        """ Get pairs of refpath / altpath of this benchmark """
         if absolute:
             return [(self._root/ref, self._root/alt) for ref, alt in self.pairs(absolute=False)]
         else:
             return [k for (k, entry) in self._entries.items() if not skip_computed or entry.dist is not None ]
+
+    def entries(self):
+        return self._entries.values()
 
     def attrs(self, ref: Path, alt: Path):
         if ref.is_relative_to(self._root): ref = ref.relative_to(self._root)
@@ -161,8 +165,10 @@ class Core:
                     for e in bench._entries.values()
                 ])
 
-                # TODO: broken
-                # if recompute_cache: self._cache.update_results(runner.id(), results)
+                if recompute_cache:
+                    results = [(e.ref, e.alt, e.dist) for e in bench.entries()]
+                    self._cache.update_results(runner.id(), results)
+
         df = pd.DataFrame(rows, columns=['algo', 'bench', 'ref', 'alt', 'dist', 'meta'])
         return df
 
@@ -182,5 +188,8 @@ class Core:
             for ref,alt,dist in results:
                 bench.attrs(ref,alt).dist = dist
 
+            new_pairs = bench.pairs(absolute = False, skip_computed=True)
             print(f"{len(results)} cache hit for {self.runner.id()} on {bench.id()}")
             self.runner.run(bench)
+            new_results = [(ref,alt,bench.attrs(ref,alt).dist) for ref,alt in new_pairs]
+            self.cache.save_results(self.runner.id(), new_results)
