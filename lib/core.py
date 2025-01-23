@@ -12,31 +12,11 @@ class Runner:
 
 
 
-class HashDistRunner(Runner):
-    """ Use this runner when you simply need to hash  the
-        files then compare your hashes
-    """
-    def __init__(self):
-        self.artifacts = dict()
-
-    def run(self, pairs):
-        for ref, alt in pairs:
-            href = self._get_or_compute(ref, self.hash)
-            halt = self._get_or_compute(alt, self.hash)
-            yield (ref, alt, self.distance(href, halt))
-
-    def hash(self, path):
-        """Given a path name, return its hash"""
-        raise NotImplementedError("Override me!")
 
 
-    def distance(self, href, halt):
-        """Given two hashes, return their distances"""
-        raise NotImplementedError("Override me!")
 
-    def _get_or_compute(self, key, compute):
-        if key not in self.artifacts: self.artifacts[key] = compute(key)
-        return self.artifacts[key]
+
+
 
 class Benchmark:
 
@@ -91,13 +71,6 @@ class Benchmark:
         return path.parent / (path.stem.split('.')[0] + '.ref' + path.suffix)
 
 
-Result = NamedTuple("Result", [
-    ('runner', str),
-    ('bench', str),
-    ('ref', Path),
-    ('alt', Path),
-    ('dist', float),
-])
 
 class Core:
 
