@@ -109,7 +109,7 @@ class Benchmark:
         files = [
             p.relative_to(root)
             for p in path.iterdir()
-            if p.is_file()
+            if p.is_file() and not p.name.startswith('.')
         ]
         metadata = {
             path: Benchmark.metadata_from_path(path)
