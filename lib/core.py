@@ -31,6 +31,10 @@ class Entry:
         self.alt = alt
         self.dist = None
 
+
+    def __repr__(self):
+        return f"({str(self.ref)}, {str(self.alt)}, {str(self.dist)})"
+
     @staticmethod
     def from_dict(d):
         out = Entry(d['ref'], d['alt'])
@@ -51,9 +55,10 @@ class Benchmark:
     def pairs(self, /, absolute, skip_computed=False):
         """ Get pairs of refpath / altpath of this benchmark """
         if absolute:
-            return [(self._root/ref, self._root/alt) for ref, alt in self.pairs(absolute=False)]
+            return [(self._root/ref, self._root/alt)
+                    for ref, alt in self.pairs(absolute=False, skip_computed=skip_computed)]
         else:
-            return [k for (k, entry) in self._entries.items() if not skip_computed or entry.dist is not None ]
+            return [k for (k, entry) in self._entries.items() if entry.dist is None or not skip_computed ]
 
     def entries(self):
         return self._entries.values()
@@ -66,6 +71,9 @@ class Benchmark:
     def copy(self):
         from copy import deepcopy
         return deepcopy(self)
+
+    def __repr__(self) -> str:
+        return f"Benchmark({self.id()}, {self.entries()})"
 
     """ Create a new Benchmark instance from the specified root path (relative to
         the benchmarks root directy) """
@@ -183,13 +191,11 @@ class Core:
             return self.runner.id()
 
         def run(self, bench):
-            results, _ = self.cache.get_results(self.runner.id(), bench.pairs(absolute=False))
+            results, _ = self.cache.get_results(self.runner.id(), bench.pairs(absolute=False, skip_computed=True))
 
             for ref,alt,dist in results:
                 bench.attrs(ref,alt).dist = dist
-
             new_pairs = bench.pairs(absolute = False, skip_computed=True)
-            print(f"{len(results)} cache hit for {self.runner.id()} on {bench.id()}")
             self.runner.run(bench)
             new_results = [(ref,alt,bench.attrs(ref,alt).dist) for ref,alt in new_pairs]
             self.cache.save_results(self.runner.id(), new_results)
