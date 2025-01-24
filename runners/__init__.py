@@ -1,9 +1,9 @@
 from .fast import Tlsh, Nilsimsa, SSDeep
-from .fbhash_text import Fbhash_text
+from .sdhash import Sdhash
 
 RUNNERS = [
     Tlsh(),
     Nilsimsa(),
     SSDeep(),
-    Fbhash_text()
+    Sdhash(),
 ]

@@ -24,6 +24,33 @@ class PairRunner(Runner):
         raise NotImplementedError("Override me!")
 
 
+class HashDistRunner(Runner):
+    """ Use this when you only need to hash files from paths then compare them
+    """
+    def __init__(self):
+        self._cache = {}
+
+    def run(self, bench):
+        pairs = bench.pairs(absolute=True, skip_computed=True)
+        for ref,alt in pairs:
+            bench.attrs(ref,alt).dist = self.distance(
+                self._get_hash(ref),
+                self._get_hash(alt),
+            )
+
+    def hash(self, path):
+        raise NotImplementedError("Override me!")
+
+    def distance(self, href, halt):
+        raise NotImplementedError("Override me!")
+
+    def _get_hash(self, path):
+        if path not in self._cache:
+            self._cache[path] = self.hash(path)
+        return self._cache[path]
+
+
+
 class Entry:
 
     def __init__(self, ref, alt):
