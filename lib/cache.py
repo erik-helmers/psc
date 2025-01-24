@@ -13,7 +13,7 @@ class PathColumnType(TypeDecorator):
     cache_ok = True
 
     def process_bind_param(self, value, dialect):
-        return str(value) if value is not None else None
+        return str(value.as_posix()) if value is not None else None
     def process_result_value(self, value, dialect):
         return Path(value)
 
