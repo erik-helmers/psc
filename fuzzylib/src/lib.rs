@@ -17,7 +17,7 @@ pub mod nilsimsa;
 pub mod pearson;
 pub mod tlsh;
 
-pub mod sise;
+pub mod lzjd;
 
 
 pub trait Hash<Data: ?Sized, Digest> {

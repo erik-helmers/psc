@@ -1,7 +1,8 @@
-from .fast import Tlsh, Nilsimsa, SSDeep
+from .fast import Tlsh, Nilsimsa, SSDeep, Lzjd
 from .sdhash import Sdhash
 
 RUNNERS = [
+    Lzjd(),
     Tlsh(),
     Nilsimsa(),
     SSDeep(),

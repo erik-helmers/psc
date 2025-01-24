@@ -8,6 +8,7 @@ bitvec = "1.0.1"
 bytemuck = "1.20.0"
 clap = { version = "4.5.23", features = ["derive"] }
 itertools = "0.13.0"
+lzjd = { git = "https://github.com/tweedegolf/lzjd-rs", version = "0.2.0" }
 md5 = "0.7.0"
 sha1 = "0.10.6"
 triple_accel = "0.4.0"

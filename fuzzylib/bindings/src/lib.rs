@@ -68,13 +68,15 @@ impl<T, Digest: Send + Sync> PyFuzzyHash<Digest> for T where T: FuzzyHash<[u8], 
 #[pymodule]
 pub mod fuzzylib {
 
-    // This doesn't work if we ue the macros directly in here, don't know why
+    // #[pymodule_export] doesn't work if we ue the macros directly in here, don't know why
     #[pymodule_export]
     use super::py::nilsimsa;
     #[pymodule_export]
     use super::py::ssdeep;
     #[pymodule_export]
     use super::py::tlsh;
+    #[pymodule_export]
+    use super::py::lzjd;
 }
 
 
@@ -100,6 +102,7 @@ mod py {
     fuzzy_hash!(ssdeep, fuzzy_hash::ssdeep::SSDeep::default());
     fuzzy_hash!(nilsimsa, fuzzy_hash::nilsimsa::Nilsimsa);
     fuzzy_hash!(tlsh, fuzzy_hash::tlsh::Tlsh);
+    fuzzy_hash!(lzjd, fuzzy_hash::lzjd::Lzjd);
     // fuzzy_hash!(sdhash, fuzzy_hash::sdhash::SDHash::default());
     // fuzzy_hash!(sise, fuzzy_hash::sise::Sise::default());
 

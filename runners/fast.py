@@ -20,3 +20,4 @@ class FuzzylibRunner(PairRunner):
 class Nilsimsa(FuzzylibRunner): pass
 class Tlsh(FuzzylibRunner): pass
 class SSDeep(FuzzylibRunner): pass
+class Lzjd(FuzzylibRunner): pass
