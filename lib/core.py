@@ -223,6 +223,6 @@ class Core:
             for ref,alt,dist in results:
                 bench.attrs(ref,alt).dist = dist
             new_pairs = bench.pairs(absolute = False, skip_computed=True)
-            self.runner.run(bench)
+            if new_pairs: self.runner.run(bench)
             new_results = [(ref,alt,bench.attrs(ref,alt).dist) for ref,alt in new_pairs]
             self.cache.save_results(self.runner.id(), new_results)
