@@ -17,13 +17,13 @@ fn essential_triplets(w: &[u8]) -> [[u8;3]; 6] {
 
 impl Hash<[u8], [u8;32]> for Nilsimsa {
     fn hash(&self, data: &[u8]) -> [u8; 32] {
-        let window_size = 5;
 
         let hist = data.windows(5)
             .flat_map(|w|{essential_triplets(w).map(|t| Pearson.hash(&t))})
             .counts();
 
         let mut out = BitArray::<[u8;32]>::default();
+
         let mean = hist.iter().sum::<usize>() as f64 / 256.;
         hist.iter().enumerate().for_each(
             |(idx,&count)| out.set(idx, count as f64 >= mean));
@@ -34,11 +34,10 @@ impl Hash<[u8], [u8;32]> for Nilsimsa {
 impl FuzzyHash<[u8], [u8;32]> for Nilsimsa {
     fn distance(&self, a: &[u8;32], b: &[u8;32]) -> f64 {
         // This is hamming on bits
-        let a = a.view_bits::<Lsb0>();
-        let b = b.view_bits::<Lsb0>();
-        a.iter().zip(b.iter())
-            .filter(|(x,y)| x!=y)
-            .count() as f64
+        a.iter().zip(b)
+         .map(|(x,y)| (x^y).count_ones())
+         .sum::<u32>() as _
+
     }
 }
 
