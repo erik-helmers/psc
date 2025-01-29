@@ -19,6 +19,7 @@ pub mod tlsh;
 
 pub mod lzjd;
 
+pub mod levenhstein;
 
 pub trait Hash<Data: ?Sized, Digest> {
     fn hash(&self, data: &Data) -> Digest;

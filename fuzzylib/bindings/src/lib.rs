@@ -77,6 +77,8 @@ pub mod fuzzylib {
     use super::py::tlsh;
     #[pymodule_export]
     use super::py::lzjd;
+    #[pymodule_export]
+    use super::py::levenshtein;
 }
 
 
@@ -103,6 +105,7 @@ mod py {
     fuzzy_hash!(nilsimsa, fuzzy_hash::nilsimsa::Nilsimsa);
     fuzzy_hash!(tlsh, fuzzy_hash::tlsh::Tlsh);
     fuzzy_hash!(lzjd, fuzzy_hash::lzjd::Lzjd);
+    fuzzy_hash!(levenshtein, fuzzy_hash::levenshtein::Levenshtein);
     // fuzzy_hash!(sdhash, fuzzy_hash::sdhash::SDHash::default());
     // fuzzy_hash!(sise, fuzzy_hash::sise::Sise::default());
 
