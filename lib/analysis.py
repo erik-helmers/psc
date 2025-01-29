@@ -5,6 +5,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+
+
+
 class Indicators():
 
     def __init__(self, df_similar, df_non_similar, threshold):
@@ -43,10 +46,7 @@ def intersection_fp_fn(fp: np.ndarray, fn: np.ndarray) -> np.ndarray:
 
 
 
-
-
-
-def indicators_based_analysis_on_dfs(df_similar, df_non_similar):
+def indicators_based_analysis_on_dfs(df_similar, df_non_similar, Plot=True):
     """Produces the ROC graph placed at an optimum threshold, calculated at the intersection of 
     FP rate and FN rate. bench_similar (resp. bench_non_similar) is the string name of a benchmark made of pairs of similar (resp. dissimilar) files.
     Returns the value of that optimal threshold and an Indicators() object at this threshold.
@@ -62,27 +62,28 @@ def indicators_based_analysis_on_dfs(df_similar, df_non_similar):
     threshold_min = threshold_values[index_min]
     min_fp_fn = fn_rate_values[index_min]
 
-    # Printing FP and FN rate to find the intersection
-    plt.close('all')
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    axes[0].plot(threshold_values, fn_rate_values, color='yellow', label="FN rate")
-    axes[0].plot(threshold_values, fp_rate_values, color='blue', label="FP rate")
-    axes[0].axvline(x=threshold_min, color='r', linestyle='--', label=f'Seuil de travail = {threshold_min:.2f}')
-    axes[0].axhline(y=min_fp_fn, color='r', linestyle='--')
-    axes[0].scatter(threshold_min, min_fp_fn, color='red', zorder=5)  # Point de maximum
-    axes[0].set_xlabel('Valeur du seuil')
-    axes[0].set_ylabel('Pourcentage')
-    axes[0].set_title("Définition du seuil de travail")
-    axes[0].legend()
-    
-    # Courbe ROC
-    axes[1].plot(fp_rate_values, recall_values)
-    axes[1].set_xlabel("False positive rate")
-    axes[1].set_ylabel("Recall")
-    axes[1].set_title("Courbe ROC (Receiving Operating Characteristics)")
-    
-    plt.tight_layout()
-    plt.show()
+    if Plot:
+        # Printing FP and FN rate to find the intersection
+        plt.close('all')
+        fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+        axes[0].plot(threshold_values, fn_rate_values, color='yellow', label="FN rate")
+        axes[0].plot(threshold_values, fp_rate_values, color='blue', label="FP rate")
+        axes[0].axvline(x=threshold_min, color='r', linestyle='--', label=f'Seuil de travail = {threshold_min:.2f}')
+        axes[0].axhline(y=min_fp_fn, color='r', linestyle='--')
+        axes[0].scatter(threshold_min, min_fp_fn, color='red', zorder=5)  # Point de maximum
+        axes[0].set_xlabel('Valeur du seuil')
+        axes[0].set_ylabel('Pourcentage')
+        axes[0].set_title("Définition du seuil de travail")
+        axes[0].legend()
+        
+        # Courbe ROC
+        axes[1].plot(fp_rate_values, recall_values)
+        axes[1].set_xlabel("False positive rate")
+        axes[1].set_ylabel("Recall")
+        axes[1].set_title("Courbe ROC (Receiving Operating Characteristics)")
+        
+        plt.tight_layout()
+        plt.show()
     return threshold_min, Indicators(df_similar, df_non_similar, threshold_min)
     
 
