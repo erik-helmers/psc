@@ -8,7 +8,7 @@ def main():
     out_dir = Path(sys.argv[1])
     paths = list(map(Path, sys.argv[2:]))
 
-    bar = progress.bar.IncrementalBar('Generating', max=len(paths)*(len(paths)+1)/2)
+    bar = progress.bar.IncrementalBar('Generating', max=len(paths)*(len(paths)-1)/2)
     for i,ref in enumerate(paths):
         for _,alt in enumerate(paths[i+1:]):
             ref_filename = f"{ref.stem}.ref{ref.suffix}"
