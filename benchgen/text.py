@@ -5,6 +5,10 @@ import re
 from actions import *
 
 
+
+random.seed("psc-x-2024")
+
+
 class TextAction(Action):
     def __init__(self, aux, *factors):
         super().__init__(*factors)
