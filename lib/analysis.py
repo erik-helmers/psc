@@ -86,7 +86,49 @@ def indicators_based_analysis_on_dfs(df_similar, df_non_similar, Plot=True):
         plt.show()
     return threshold_min, Indicators(df_similar, df_non_similar, threshold_min)
     
+def algo_comparison_on_dfs(runners, benchmarks_similar, benchmarks_non_similar, Plot=True):
 
+    thresholds = {}
+    indicators = {}
+    dataframes_similar = {}
+    dataframes_non_similar = {}
+    for runner in runners:
+        dataframes_similar[runner] = np.array(benchmarks_similar[runner]["dist"])
+        dataframes_non_similar[runner] = np.array(benchmarks_non_similar[runner]["dist"])
+        threshold, indicator = indicators_based_analysis_on_dfs(benchmarks_similar[runner], benchmarks_non_similar[runner], Plot=False)
+        thresholds[runner] = threshold
+        indicators[runner] = indicator
+
+    if Plot:
+        plt.close('all')
+        fig, ax = plt.subplots(figsize=(10, 6))
+
+        # Plot the fisrt algorithm outside of the loop to put the label
+        ax.scatter([-0.1]*len(dataframes_similar[runners[0]]), dataframes_similar[runners[0]]/thresholds[runners[0]], label='Fichiers similaires', color='green', marker='o', s=5)  # Ronds
+        ax.scatter([0.1]*len(dataframes_non_similar[runners[0]]), dataframes_non_similar[runners[0]]/thresholds[runners[0]], label='Fichiers non similaires', color='red', marker='s', s=5)  # Carrés
+
+        # Tracer les points pour les deux séries
+        for index, runner in enumerate(runners, start=1):
+            ax.scatter([index-1.1]*len(dataframes_similar[runner]), dataframes_similar[runner]/thresholds[runner], color='green', marker='o', s=5)  # Ronds
+            ax.scatter([index-0.9]*len(dataframes_non_similar[runner]), dataframes_non_similar[runner]/thresholds[runner], color='red', marker='s', s=5)  # Carrés
+
+        # Horizontal line for the threshold
+        ax.axhline(y=1, color='green', linestyle='--', linewidth=1.5, label='Seuil')
+
+        # Axes and labels
+        x = np.arange(len(runners))
+        ax.set_xticks(x)
+        ax.set_xticklabels(runners, rotation=45, ha='right')
+        ax.set_xlabel('Algorithmes')
+        ax.set_ylabel('Distances')
+        ax.set_title('Distances renormalisées au seuil de travail par algorithme')
+
+        ax.legend()
+
+        plt.tight_layout()
+        plt.show()
+
+    return thresholds, indicators
 
 
 def pretty(df):
