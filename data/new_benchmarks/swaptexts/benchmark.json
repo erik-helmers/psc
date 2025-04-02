@@ -1,0 +1,3176 @@
+[
+    {
+        "id": "swap",
+        "name": "Swap",
+        "description": "",
+        "cover": "",
+        "content_type": "",
+        "entries": [
+            {
+                "ref": "01.txt",
+                "alt": "01-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "01-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "02.txt",
+                "alt": "02-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "03.txt",
+                "alt": "03-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "04.txt",
+                "alt": "04-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "05.txt",
+                "alt": "05-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "06.txt",
+                "alt": "06-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "07.txt",
+                "alt": "07-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "08.txt",
+                "alt": "08-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "09.txt",
+                "alt": "09-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "10.txt",
+                "alt": "10-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "11.txt",
+                "alt": "11-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "12.txt",
+                "alt": "12-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "13.txt",
+                "alt": "13-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "14.txt",
+                "alt": "14-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-1..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-2..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-3..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-4..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-5..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-6..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-7..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-8..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-9..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-10..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-11..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-12..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-13..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-14..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-15..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "15.txt",
+                "alt": "15-16..txt",
+                "expect_similar": true,
+                "mods": {
+                    "swap": {
+                        "nb_swaps": 5,
+                        "rel_size": 0.05
+                    }
+                }
+            },
+            {
+                "ref": "01.txt",
+                "alt": "02.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "03.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "04.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "05.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "06.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "07.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "08.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "09.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "01.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "03.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "04.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "05.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "06.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "07.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "08.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "09.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "02.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "04.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "05.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "06.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "07.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "08.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "09.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "03.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "05.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "06.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "07.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "08.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "09.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "04.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "06.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "07.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "08.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "09.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "05.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "07.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "08.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "09.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "06.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "07.txt",
+                "alt": "08.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "07.txt",
+                "alt": "09.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "07.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "07.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "07.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "07.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "07.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "07.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "08.txt",
+                "alt": "09.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "08.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "08.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "08.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "08.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "08.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "08.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "09.txt",
+                "alt": "10.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "09.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "09.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "09.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "09.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "09.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "10.txt",
+                "alt": "11.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "10.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "10.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "10.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "10.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "11.txt",
+                "alt": "12.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "11.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "11.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "11.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "12.txt",
+                "alt": "13.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "12.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "12.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "13.txt",
+                "alt": "14.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "13.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            },
+            {
+                "ref": "14.txt",
+                "alt": "15.txt",
+                "expect_similar": false
+            }
+        ]
+    }
+]
