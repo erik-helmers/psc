@@ -11,7 +11,6 @@ Dans ces conditions, tout passe par `uv` et pas par `pip`, `cond`, `pyenv`, `poe
 > Sur Windows, utiliser [Git Bash](https://git-scm.com/downloads) par exemple.
 
 
-
 Commmencer par télécharger le projet : 
 ``` sh
 $ git clone https://github.com/erik-helmers/psc 
@@ -22,7 +21,8 @@ Installer les dépendences de base :
 
 ``` sh
 $ uv sync
-$ source .venv/bin/activate
+$ source .venv/bin/activate # linux
+$ .venv\Scripts\activate    # windows
 ```
 
 Deux options pour installer `fuzzlib` : 
@@ -63,6 +63,11 @@ $ uv run ./benchgen/noise.py  data/benchmarks/noise   benchgen/text/*.txt
 
 
 ## Build, run, debug
+
+- Pour lancer le dashboard: 
+    ```
+    $ uv run run.py
+    ```
 
 - Pour lancer jupyter : 
     ```sh
