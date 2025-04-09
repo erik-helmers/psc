@@ -95,7 +95,6 @@ def find_all_benchmarks(root) -> list[Benchmark]:
 def read_benchmarks(root, directory) -> list[Benchmark]:
 
     description = directory / "description.json"
-
     if not description.exists():
         print("Warning: No description file found in directory... skipping", directory)
         return []
@@ -201,7 +200,7 @@ class Core:
 
         else:
             cols = ["bench", "ref", "alt"][exclude_bench:]
-            rows = [ [(b and b.id) or "", str(e.ref), str(e.alt)][exclude_bench:]
+            rows = [ [b, str(e.ref), str(e.alt)][exclude_bench:]
                       for (b, e) in _entries]
 
         out = pd.DataFrame(rows, columns=cols)
