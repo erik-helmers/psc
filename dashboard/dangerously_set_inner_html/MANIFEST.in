@@ -1,0 +1,11 @@
+include dangerously_set_inner_html/dangerously_set_inner_html.min.js
+include dangerously_set_inner_html/dangerously_set_inner_html.min.js.map
+include dangerously_set_inner_html/async-*.js
+include dangerously_set_inner_html/async-*.js.map
+include dangerously_set_inner_html/*-shared.js
+include dangerously_set_inner_html/*-shared.js.map
+include dangerously_set_inner_html/metadata.json
+include dangerously_set_inner_html/package-info.json
+include README.md
+include LICENSE
+include package.json

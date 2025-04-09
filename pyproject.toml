@@ -18,8 +18,10 @@ dependencies = [
     "pygwalker>=0.4.9.13",
     "ipykernel>=6.29.5",
     "fuzzylib",
+    "dangerously-set-inner-html",
 ]
 
 [tool.uv.sources]
 fuzzylib = { path = "fuzzylib/bindings" }
+dangerously-set-inner-html = { path = "dashboard/dangerously_set_inner_html/dist/dangerously_set_inner_html-0.0.1-py3-none-any.whl" }
 
