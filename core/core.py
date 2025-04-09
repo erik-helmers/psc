@@ -1,6 +1,12 @@
 from pathlib import Path
 import pandas as pd
-from typing import NamedTuple
+from dataclasses import dataclass, field
+from typing import Any, Callable, overload
+import os
+import json
+from dataclasses import dataclass, field
+from typing import Any, Callable, overload
+import os
 
 
 class Store(list):
@@ -27,226 +33,176 @@ class Store(list):
         return [self.by_id(id) for id in ids]
 
 
-class Runner:
 
-    def id(self): return self.__class__.__name__.lower()
 
-    def run(self, bench):
-        raise NotImplementedError()
 
-class PairRunner(Runner):
-    """ Use this when you just want the ref/alt paths absolute paths and will
-        return them in the form ref/alt/dist
+@dataclass
+class Mod:
+    """ This represents a modification that was applied to a a reference (ref) file
+        to produce an alternative (alt) file.
     """
-    def run(self, bench):
-        pairs = bench.pairs(absolute=True, skip_computed=True)
-        res = self.run_on_pairs(pairs)
-        for ref,alt,dist in res:
-            bench.attrs(ref,alt).dist = dist
-
-    def run_on_pairs(self, pairs):
-        raise NotImplementedError("Override me!")
+    id: str
+    name: str
+    description: str
 
 
-class HashDistRunner(Runner):
-    """ Use this when you only need to hash files from paths then compare them
-    """
-    def __init__(self):
-        self._cache = {}
-
-    def run(self, bench):
-        pairs = bench.pairs(absolute=True, skip_computed=True)
-        for ref,alt in pairs:
-            bench.attrs(ref,alt).dist = self.distance(
-                self._get_hash(ref),
-                self._get_hash(alt),
-            )
-
-    def hash(self, path):
-        raise NotImplementedError("Override me!")
-
-    def distance(self, href, halt):
-        raise NotImplementedError("Override me!")
-
-    def _get_hash(self, path):
-        if path not in self._cache:
-            self._cache[path] = self.hash(path)
-        return self._cache[path]
-
-
-
+@dataclass
 class Entry:
+    """ This represents a pair of files that should be compared.
+        The reference file (ref) is an "original" file, and the alternative file (alt)
+        was produced by applying a series of modifications (mods) to the reference file.
+    """
+    ref: str
+    alt: str
+    mods: dict[str, Any] = field(default_factory=dict) # mod id, value pairs
 
-    def __init__(self, ref, alt):
-        self.ref = ref
-        self.alt = alt
-        self.dist = None
 
 
-    def __repr__(self):
-        return f"({str(self.ref)}, {str(self.alt)}, {str(self.dist)})"
-
-    @staticmethod
-    def from_dict(d):
-        out = Entry(d['ref'], d['alt'])
-        for k,v in d.items():
-            if k not in ['ref', 'alt']: setattr(out, k, v)
-        return out
-
+@dataclass
 class Benchmark:
+    id: str
+    name: str
+    content_type: str
+    description: str
+    cover: str | None # Path to cover image if not None
+    entries: list[Entry] = field(default_factory=list)
 
-    def __init__(self, id, root, entries):
-        self._id = id
-        self._root = root
-        self._entries = {(e.ref,e.alt): e for e in entries}
 
-    def id(self) -> str:
-        return self._id
+@dataclass
+class Runner:
+    id: str
+    name: str
+    description: str
+    run: Callable[[list[tuple[str,str]]], list[float]]
 
-    def pairs(self, /, absolute, skip_computed=False):
-        """ Get pairs of refpath / altpath of this benchmark """
-        if absolute:
-            return [(self._root/ref, self._root/alt)
-                    for ref, alt in self.pairs(absolute=False, skip_computed=skip_computed)]
-        else:
-            return [k for (k, entry) in self._entries.items() if entry.dist is None or not skip_computed ]
+@dataclass
+class Result:
+    entry: Entry
+    runner: Runner
+    distance: float
 
-    def entries(self):
-        return self._entries.values()
 
-    def attrs(self, ref: Path, alt: Path):
-        if ref.is_relative_to(self._root): ref = ref.relative_to(self._root)
-        if alt.is_relative_to(self._root): alt = alt.relative_to(self._root)
-        return self._entries[(ref,alt)]
 
-    def copy(self):
-        from copy import deepcopy
-        return deepcopy(self)
+def find_all_benchmarks(root) -> list[Benchmark]:
+    out = []
+    for directory in root.iterdir():
+        if not directory.is_dir(): continue
+        out.extend(read_benchmarks(root, directory))
 
-    def __repr__(self) -> str:
-        return f"Benchmark({self.id()}, {self.entries()})"
+    return out
 
-    """ Create a new Benchmark instance from the specified root path (relative to
-        the benchmarks root directy) """
-    @staticmethod
-    def from_path(root: Path, path: Path):
-        files = [
-            p.relative_to(root)
-            for p in path.iterdir()
-            if p.is_file() and not p.name.startswith('.')
-        ]
-        metadata = {
-            path: Benchmark.metadata_from_path(path)
-            for path in files
-        }
-        entries = [
-            Entry.from_dict({ **metadata[path], 'ref': Benchmark.reference_from_path(path), 'alt': path })
-            for path in files
-            if not metadata[path].get('ref')
-        ]
-        return Benchmark(str(path.relative_to(root/"benchmarks")), root, entries)
 
-    @staticmethod
-    def metadata_from_path(path):
-        modlist = path.stem.split('.')[1:]
-        mods : dict[str,object]= {}
-        for mod in modlist :
-            if not '-' in mod: mods[mod] = True; continue
-            key, param = mod.split('-')
-            try: mods[key] = int(param)
-            except ValueError: mods[key] = param
-        return mods
+def read_benchmarks(root, directory) -> list[Benchmark]:
 
-    @staticmethod
-    def reference_from_path(path) -> Path :
-        return path.parent / (path.stem.split('.')[0] + '.ref' + path.suffix)
+    description = directory / "description.json"
+
+    if not description.exists():
+        print("Warning: No description file found in directory... skipping", directory)
+        return []
+
+    out = []
+
+    with open(description) as f:
+        data = json.load(f)
+
+    for bench in data:
+        bench["entries"] = [read_entry(e, root, directory) for e in bench["entries"]]
+        out.append(Benchmark(**bench))
+
+    return out
+
+def read_entry(data, root, directory) -> Entry:
+
+    ref = directory / data["ref"]
+    alt = directory / data["alt"]
+
+    if not ref.exists(): raise FileNotFoundError(f"Reference file '{ref}' not found")
+    if not alt.exists(): raise FileNotFoundError(f"Alternative file '{alt}' not found")
+
+    ref = ref.relative_to(root)
+    alt = alt.relative_to(root)
+
+    return Entry(ref=ref, alt=alt, mods = data["mods"])
+
+
+def compute_results(root: Path, runner, entries, cache = None):
+    if not entries: return []
+
+    results = [Result(entry, runner, None ) for entry in entries] # type: ignore
+
+    if cache is not None: cache.populate_results(results)
+
+    distances = runner.run([(root/e.ref, root/e.alt) for e in entries])
+    for idx, dist in enumerate(distances):
+        results[idx].distance = dist
+
+    return results
+
+
+from .cache import Cache
 
 
 class Core:
-
-    def __init__(self, data_root: Path):
-        from .cache import Cache, session_from_path
-        from runners import RUNNERS
-        self.root = data_root
-        self._benchmarks = [
-            Benchmark.from_path(self.root, path)
-            for path in (self.root / "benchmarks").iterdir()
-            if not path.is_file()
-        ]
-
-        self._runners = RUNNERS
-        self._cache = Cache(session_from_path(self.root / "cache.sqlite"))
-
-    def benchmarks(self):
-        return list(map(Benchmark.id, self._benchmarks))
-
-    def runners(self):
-        return list(map(Runner.id, self._runners))
-
-    def __runner_by_id(self, runner: str) -> Runner:
-        try: return next(filter(lambda r: r.id() == runner, self._runners))
-        except StopIteration: raise ValueError(f"runner {runner} doesn't exist in {self.runners()}")
-    def __benchmark_by_id(self, benchmark: str) -> Benchmark:
-        try: return next(filter(lambda b: b.id() == benchmark, self._benchmarks))
-        except StopIteration: raise ValueError(f"benchmark {benchmark} doesn't exist in {self.benchmarks()}")
-
+    """ This class glues together the various components of the benchmark system.
+        It is responsible for loading benchmarks, running them, and storing results.
     """
-    All of this library revolves around this method : given some runners
-    (ie. some fuzzy-hash implementations), we run a bunch of benchmarks
-    and we return the results as a dataframe containing the following :
-       - `algo` : the id of the algo that provided this result
-       - `bench`: the id of the benchmark that was used
-       - `ref`  : the reference file (ie. a path relative to the bench root)
-       - `alt`  : the alternative file (ie. a path relative to the bench root)
-       - `mods` : the metadata about the relation between `ref` and `alt`
-       - `dist` : the distance (a float) as computed by the runner
+    cache: 'Cache'
 
-    Options:
-      - `bypass_cache`: don't use the cache in any way
-      - `recompute_cache`: drop the previously cached results: Broken
-    """
-    def run(self, runners: list[str], benchs: list[str],
-            bypass_cache=False, recompute_cache=False) -> pd.DataFrame :
-        print(f"Running {runners} with benchs {benchs}")
-        rows = []
-        for runner_id in runners:
-            for bench_id in benchs:
-                runner= self.__runner_by_id(runner_id)
-                bench = self.__benchmark_by_id(bench_id).copy()
+    def __init__(self, data: Path | None = None):
+        self.data_path = data or Path(os.getenv("DATA_PATH", Path(__file__).parent / "../data"  ))
+        self.cache_path = self.data_path / "results.sqlite"
+        self.bench_path = self.data_path / "benchmarks"
 
-                if not bypass_cache and not recompute_cache:
-                    runner = Core.CachedRunner(self.root, self._cache, runner)
+        self.benchmarks = Store(find_all_benchmarks(self.bench_path))
 
-                runner.run(bench)
-                rows.extend([
-                    (runner.id(), bench.id(),
-                     e.ref, e.alt, e.dist, vars(e))
-                    for e in bench._entries.values()
-                ])
+        from runners import runners
+        self.runners = Store(runners)
 
-                if recompute_cache:
-                    results = [(e.ref, e.alt, e.dist) for e in bench.entries()]
-                    self._cache.update_results(runner.id(), results)
+        self.cache = Cache(self.cache_path)
 
-        df = pd.DataFrame(rows, columns=['algo', 'bench', 'ref', 'alt', 'dist', 'meta'])
-        return df
+        print(f"Core initialized at {self.data_path} with {len(self.benchmarks)} benchmarks and {len(self.runners)} runners")
+
+    @overload
+    def run(self, runner: Runner, entries: Benchmark | list[Entry]) -> list[Result]: ...
+    @overload
+    def run(self, runner: Runner, entries: Entry) -> Result: ...
+
+    def run(self, runner: Runner, entries: Benchmark | Entry | list[Entry]) -> list[Result] | Result :
+        """ Run a benchmark and return the results.
+            If entries is a Benchmark, run all entries in the benchmark.
+            If entries is an Entry, run the entry.
+            If entries is a list of Entries, run all entries in the list.
+        """
+        if isinstance(entries, Benchmark):
+            _entries = entries.entries
+        elif isinstance(entries, Entry):
+            _entries = [entries]
+        else : _entries = entries
+
+        out = compute_results(self.bench_path, runner, _entries, self.cache)
+
+        return out[0] if isinstance(entries, Entry) else out
 
 
-    class CachedRunner(Runner):
-        def __init__(self, root, cache, runner):
-            self.root = root
-            self.cache = cache
-            self.runner = runner
+    def build_df(self, benchmarks = [], entries = [], runners = [], ):
 
-        def id(self):
-            return self.runner.id()
+        _entries = [(b.id, e) for b in benchmarks for e in b.entries]
+        _entries += [("", e) for e in entries]
 
-        def run(self, bench):
-            results, _ = self.cache.get_results(self.runner.id(), bench.pairs(absolute=False, skip_computed=True))
+        exclude_bench = int(len(benchmarks) == 0)
 
-            for ref,alt,dist in results:
-                bench.attrs(ref,alt).dist = dist
-            new_pairs = bench.pairs(absolute = False, skip_computed=True)
-            if new_pairs: self.runner.run(bench)
-            new_results = [(ref,alt,bench.attrs(ref,alt).dist) for ref,alt in new_pairs]
-            self.cache.save_results(self.runner.id(), new_results)
+        if runners:
+            cols : Any = ["bench", "ref", "alt", "distance", "runner"][exclude_bench:]
+            rows = []
+            for r in runners:
+                res = self.run(r, [e for _, e in _entries])
+                rows += [ [b, str(e.ref), str(e.alt), res.distance, r.id][exclude_bench:]
+                        for (b, e), res in zip(_entries, res)]
+
+        else:
+            cols = ["bench", "ref", "alt"][exclude_bench:]
+            rows = [ [(b and b.id) or "", str(e.ref), str(e.alt)][exclude_bench:]
+                      for (b, e) in _entries]
+
+        out = pd.DataFrame(rows, columns=cols)
+        return  out
