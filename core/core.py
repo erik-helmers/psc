@@ -3,6 +3,30 @@ import pandas as pd
 from typing import NamedTuple
 
 
+class Store(list):
+
+    def by_id(self, id):
+        """ Return the first element with the given id. """
+        if not hasattr(self, '__ids'): self.__ids = {}
+
+
+        if obj := self.__ids.get(id, None): return obj
+
+        # > Theree are 2 hard problems in computer science:
+        # >   - Naming things
+        # >   - Cache invalidation
+        # >   - Off by one errors
+        # Here our cache will be wrong if elements are removed from the list
+        # but we don't care about that for now.
+        self.__ids = { obj.id: obj for obj in self }
+        if obj := self.__ids.get(id, None): return obj
+        raise ValueError(f"Item with id '{id}' not found")
+
+    def by_ids(self, ids):
+        """ Return the first element with the given id. """
+        return [self.by_id(id) for id in ids]
+
+
 class Runner:
 
     def id(self): return self.__class__.__name__.lower()
