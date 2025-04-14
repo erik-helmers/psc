@@ -1,6 +1,10 @@
+from pathlib import Path
 import dash
 from dash import html, dash_table, callback, Input, Output, State, dcc
 import dash_mantine_components as dmc
+import plotly.express as px
+import pandas as pd
+from typing import Any
 
 
 from ..state import core
@@ -58,7 +62,6 @@ def entries_table_data(runners, bench_id):
     runners = core.runners.by_ids(runners)
     df = core.build_df(entries=bench.entries, runners=runners)
 
-    print(runners)
     if "runner" in df.columns:
         df = df.pivot(index=["ref", "alt"], columns="runner", values="distance").reset_index()
 
@@ -82,8 +85,81 @@ def cell_viz(cells, bench_id):
         if column_id not in ["ref", "alt"]:
             return html.Div(f"{column_id}: {row_id}")
         path = getattr(bench.entries[row_id], column_id)
-        return html.P(f"{path}")
-
+        return file_viz(path)
 
     cells = cells or []
     return [div for cell in cells if (div := viz(**cell)) is not None]
+
+
+
+def file_viz(path):
+    path = core.bench_path / path
+    if path.suffix in ['.txt']:
+        return file_viz_txt(path)
+    elif path.suffix in ['.png', '.jpg', '.jpeg', '.gif', '.bmp']:
+        return file_viz_img(path)
+
+
+def ngrams(_bytes, n=2, with_repr=False):
+    from sklearn.feature_extraction.text import CountVectorizer
+
+    columns : Any = ["count", "x","y","z"][:n+1]
+
+    if len(_bytes) < n: return pd.DataFrame(columns=(columns + ["repr"]) if with_repr else columns)
+
+    vectorizer = CountVectorizer(analyzer='char', ngram_range=(n, n), encoding="iso-8859-1")
+
+    arr = vectorizer.fit_transform([_bytes]).toarray()[0]
+
+    data = ([arr[v]] + [ord(c) for c in k] for k, v in vectorizer.vocabulary_.items())
+    counts = pd.DataFrame(data, columns=columns)
+
+    if with_repr:
+        counts["repr"] = counts.apply(lambda x: " ".join([repr(chr(v)) for v in x[1:]]), axis=1)
+
+    return counts
+
+
+
+def file_viz_txt(path):
+    _bytes = open(path, 'rb').read()
+    # content = _bytes.decode("utf8")
+
+    bigrams = ngrams(_bytes, with_repr=True)
+    bigrams = px.scatter(bigrams, x="x", y="y", size="count", color="count", height=800, width=800, custom_data=[bigrams["repr"]])
+    bigrams.update_traces(hovertemplate='%{x} %{y} <br>%{customdata[0]}')
+    bigrams.update_xaxes(range=(0,255))
+    bigrams.update_yaxes(range=(0,255))
+
+    trigrams = ngrams(_bytes, n=3, with_repr=True)
+    trigrams = px.scatter_3d(trigrams, x="x", y="y", z="z", size="count", color="count", height=800, width=800, custom_data=[trigrams["repr"]])
+    trigrams.update_traces(hovertemplate='%{x} %{y} <br>%{customdata[0]}')
+
+    return dmc.Stack(children=[
+        dmc.Textarea(value = str(_bytes), minRows=8, maxRows=8, autosize=True),
+        dcc.Graph(figure=bigrams),
+        dcc.Graph(figure=trigrams),
+
+    ])
+
+
+
+def file_viz_img(path):
+    import base64
+    _bytes = open(path, 'rb').read()
+
+    encoded_image = base64.b64encode(_bytes).decode('utf-8')
+
+    bigrams = ngrams(_bytes, n=2, with_repr=False)
+    bigrams = px.scatter(bigrams, x="x", y="y", size="count", color="count", height=800, width=800)
+    bigrams.update_xaxes(range=(0,255))
+    bigrams.update_yaxes(range=(0,255))
+
+    trigrams = ngrams(_bytes, n=3, with_repr=False)
+    trigrams = px.scatter_3d(trigrams, x="x", y="y", z="z", size="count", color="count", height=800, width=800)
+
+    return dmc.Stack(children=[
+        html.Img(src=f'data:image/png;base64,{encoded_image}'),
+        dcc.Graph(figure=bigrams),
+        dcc.Graph(figure=trigrams),
+    ])
