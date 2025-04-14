@@ -107,7 +107,15 @@ def ngrams(_bytes, n=2, with_repr=False):
 
     if len(_bytes) < n: return pd.DataFrame(columns=(columns + ["repr"]) if with_repr else columns)
 
-    vectorizer = CountVectorizer(analyzer='char', ngram_range=(n, n), encoding="iso-8859-1")
+    vectorizer = CountVectorizer(
+        analyzer='char',
+        ngram_range=(n, n),
+        # We just want an encoding without illegal byte sequences
+        encoding="iso-8859-1",
+        # We don't want any modifications on the content, especially
+        # if the bytes are not text
+        lowercase=False,
+    )
 
     arr = vectorizer.fit_transform([_bytes]).toarray()[0]
 
