@@ -8,7 +8,7 @@
         "entries": [
             {
                 "ref": "01.bmp",
-                "alt": "01-1..bmp",
+                "alt": "01-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -20,7 +20,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-2..bmp",
+                "alt": "01-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -32,7 +32,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-3..bmp",
+                "alt": "01-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -44,7 +44,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-4..bmp",
+                "alt": "01-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -56,7 +56,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-5..bmp",
+                "alt": "01-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -68,7 +68,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-6..bmp",
+                "alt": "01-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -80,7 +80,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-7..bmp",
+                "alt": "01-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -92,7 +92,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-8..bmp",
+                "alt": "01-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -104,7 +104,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-9..bmp",
+                "alt": "01-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -116,7 +116,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-10..bmp",
+                "alt": "01-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -128,7 +128,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-11..bmp",
+                "alt": "01-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -140,7 +140,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-12..bmp",
+                "alt": "01-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -152,7 +152,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-13..bmp",
+                "alt": "01-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -164,7 +164,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-14..bmp",
+                "alt": "01-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -176,7 +176,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-15..bmp",
+                "alt": "01-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -188,7 +188,7 @@
             },
             {
                 "ref": "01.bmp",
-                "alt": "01-16..bmp",
+                "alt": "01-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -200,7 +200,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-1..bmp",
+                "alt": "02-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -212,7 +212,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-2..bmp",
+                "alt": "02-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -224,7 +224,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-3..bmp",
+                "alt": "02-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -236,7 +236,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-4..bmp",
+                "alt": "02-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -248,7 +248,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-5..bmp",
+                "alt": "02-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -260,7 +260,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-6..bmp",
+                "alt": "02-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -272,7 +272,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-7..bmp",
+                "alt": "02-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -284,7 +284,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-8..bmp",
+                "alt": "02-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -296,7 +296,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-9..bmp",
+                "alt": "02-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -308,7 +308,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-10..bmp",
+                "alt": "02-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -320,7 +320,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-11..bmp",
+                "alt": "02-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -332,7 +332,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-12..bmp",
+                "alt": "02-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -344,7 +344,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-13..bmp",
+                "alt": "02-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -356,7 +356,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-14..bmp",
+                "alt": "02-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -368,7 +368,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-15..bmp",
+                "alt": "02-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -380,7 +380,7 @@
             },
             {
                 "ref": "02.bmp",
-                "alt": "02-16..bmp",
+                "alt": "02-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -392,7 +392,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-1..bmp",
+                "alt": "03-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -404,7 +404,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-2..bmp",
+                "alt": "03-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -416,7 +416,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-3..bmp",
+                "alt": "03-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -428,7 +428,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-4..bmp",
+                "alt": "03-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -440,7 +440,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-5..bmp",
+                "alt": "03-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -452,7 +452,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-6..bmp",
+                "alt": "03-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -464,7 +464,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-7..bmp",
+                "alt": "03-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -476,7 +476,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-8..bmp",
+                "alt": "03-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -488,7 +488,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-9..bmp",
+                "alt": "03-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -500,7 +500,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-10..bmp",
+                "alt": "03-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -512,7 +512,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-11..bmp",
+                "alt": "03-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -524,7 +524,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-12..bmp",
+                "alt": "03-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -536,7 +536,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-13..bmp",
+                "alt": "03-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -548,7 +548,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-14..bmp",
+                "alt": "03-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -560,7 +560,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-15..bmp",
+                "alt": "03-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -572,7 +572,7 @@
             },
             {
                 "ref": "03.bmp",
-                "alt": "03-16..bmp",
+                "alt": "03-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -584,7 +584,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-1..bmp",
+                "alt": "04-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -596,7 +596,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-2..bmp",
+                "alt": "04-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -608,7 +608,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-3..bmp",
+                "alt": "04-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -620,7 +620,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-4..bmp",
+                "alt": "04-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -632,7 +632,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-5..bmp",
+                "alt": "04-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -644,7 +644,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-6..bmp",
+                "alt": "04-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -656,7 +656,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-7..bmp",
+                "alt": "04-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -668,7 +668,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-8..bmp",
+                "alt": "04-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -680,7 +680,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-9..bmp",
+                "alt": "04-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -692,7 +692,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-10..bmp",
+                "alt": "04-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -704,7 +704,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-11..bmp",
+                "alt": "04-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -716,7 +716,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-12..bmp",
+                "alt": "04-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -728,7 +728,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-13..bmp",
+                "alt": "04-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -740,7 +740,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-14..bmp",
+                "alt": "04-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -752,7 +752,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-15..bmp",
+                "alt": "04-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -764,7 +764,7 @@
             },
             {
                 "ref": "04.bmp",
-                "alt": "04-16..bmp",
+                "alt": "04-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -776,7 +776,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-1..bmp",
+                "alt": "05-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -788,7 +788,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-2..bmp",
+                "alt": "05-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -800,7 +800,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-3..bmp",
+                "alt": "05-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -812,7 +812,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-4..bmp",
+                "alt": "05-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -824,7 +824,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-5..bmp",
+                "alt": "05-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -836,7 +836,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-6..bmp",
+                "alt": "05-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -848,7 +848,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-7..bmp",
+                "alt": "05-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -860,7 +860,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-8..bmp",
+                "alt": "05-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -872,7 +872,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-9..bmp",
+                "alt": "05-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -884,7 +884,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-10..bmp",
+                "alt": "05-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -896,7 +896,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-11..bmp",
+                "alt": "05-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -908,7 +908,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-12..bmp",
+                "alt": "05-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -920,7 +920,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-13..bmp",
+                "alt": "05-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -932,7 +932,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-14..bmp",
+                "alt": "05-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -944,7 +944,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-15..bmp",
+                "alt": "05-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -956,7 +956,7 @@
             },
             {
                 "ref": "05.bmp",
-                "alt": "05-16..bmp",
+                "alt": "05-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -968,7 +968,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-1..bmp",
+                "alt": "06-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -980,7 +980,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-2..bmp",
+                "alt": "06-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -992,7 +992,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-3..bmp",
+                "alt": "06-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1004,7 +1004,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-4..bmp",
+                "alt": "06-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1016,7 +1016,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-5..bmp",
+                "alt": "06-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1028,7 +1028,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-6..bmp",
+                "alt": "06-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1040,7 +1040,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-7..bmp",
+                "alt": "06-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1052,7 +1052,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-8..bmp",
+                "alt": "06-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1064,7 +1064,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-9..bmp",
+                "alt": "06-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1076,7 +1076,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-10..bmp",
+                "alt": "06-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1088,7 +1088,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-11..bmp",
+                "alt": "06-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1100,7 +1100,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-12..bmp",
+                "alt": "06-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1112,7 +1112,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-13..bmp",
+                "alt": "06-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1124,7 +1124,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-14..bmp",
+                "alt": "06-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1136,7 +1136,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-15..bmp",
+                "alt": "06-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1148,7 +1148,7 @@
             },
             {
                 "ref": "06.bmp",
-                "alt": "06-16..bmp",
+                "alt": "06-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1160,7 +1160,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-1..bmp",
+                "alt": "07-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1172,7 +1172,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-2..bmp",
+                "alt": "07-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1184,7 +1184,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-3..bmp",
+                "alt": "07-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1196,7 +1196,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-4..bmp",
+                "alt": "07-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1208,7 +1208,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-5..bmp",
+                "alt": "07-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1220,7 +1220,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-6..bmp",
+                "alt": "07-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1232,7 +1232,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-7..bmp",
+                "alt": "07-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1244,7 +1244,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-8..bmp",
+                "alt": "07-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1256,7 +1256,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-9..bmp",
+                "alt": "07-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1268,7 +1268,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-10..bmp",
+                "alt": "07-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1280,7 +1280,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-11..bmp",
+                "alt": "07-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1292,7 +1292,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-12..bmp",
+                "alt": "07-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1304,7 +1304,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-13..bmp",
+                "alt": "07-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1316,7 +1316,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-14..bmp",
+                "alt": "07-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1328,7 +1328,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-15..bmp",
+                "alt": "07-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1340,7 +1340,7 @@
             },
             {
                 "ref": "07.bmp",
-                "alt": "07-16..bmp",
+                "alt": "07-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1352,7 +1352,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-1..bmp",
+                "alt": "08-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1364,7 +1364,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-2..bmp",
+                "alt": "08-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1376,7 +1376,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-3..bmp",
+                "alt": "08-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1388,7 +1388,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-4..bmp",
+                "alt": "08-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1400,7 +1400,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-5..bmp",
+                "alt": "08-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1412,7 +1412,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-6..bmp",
+                "alt": "08-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1424,7 +1424,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-7..bmp",
+                "alt": "08-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1436,7 +1436,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-8..bmp",
+                "alt": "08-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1448,7 +1448,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-9..bmp",
+                "alt": "08-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1460,7 +1460,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-10..bmp",
+                "alt": "08-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1472,7 +1472,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-11..bmp",
+                "alt": "08-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1484,7 +1484,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-12..bmp",
+                "alt": "08-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1496,7 +1496,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-13..bmp",
+                "alt": "08-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1508,7 +1508,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-14..bmp",
+                "alt": "08-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1520,7 +1520,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-15..bmp",
+                "alt": "08-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1532,7 +1532,7 @@
             },
             {
                 "ref": "08.bmp",
-                "alt": "08-16..bmp",
+                "alt": "08-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1544,7 +1544,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-1..bmp",
+                "alt": "09-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1556,7 +1556,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-2..bmp",
+                "alt": "09-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1568,7 +1568,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-3..bmp",
+                "alt": "09-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1580,7 +1580,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-4..bmp",
+                "alt": "09-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1592,7 +1592,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-5..bmp",
+                "alt": "09-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1604,7 +1604,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-6..bmp",
+                "alt": "09-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1616,7 +1616,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-7..bmp",
+                "alt": "09-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1628,7 +1628,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-8..bmp",
+                "alt": "09-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1640,7 +1640,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-9..bmp",
+                "alt": "09-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1652,7 +1652,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-10..bmp",
+                "alt": "09-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1664,7 +1664,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-11..bmp",
+                "alt": "09-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1676,7 +1676,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-12..bmp",
+                "alt": "09-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1688,7 +1688,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-13..bmp",
+                "alt": "09-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1700,7 +1700,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-14..bmp",
+                "alt": "09-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1712,7 +1712,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-15..bmp",
+                "alt": "09-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1724,7 +1724,7 @@
             },
             {
                 "ref": "09.bmp",
-                "alt": "09-16..bmp",
+                "alt": "09-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1736,7 +1736,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-1..bmp",
+                "alt": "10-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1748,7 +1748,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-2..bmp",
+                "alt": "10-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1760,7 +1760,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-3..bmp",
+                "alt": "10-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1772,7 +1772,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-4..bmp",
+                "alt": "10-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1784,7 +1784,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-5..bmp",
+                "alt": "10-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1796,7 +1796,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-6..bmp",
+                "alt": "10-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1808,7 +1808,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-7..bmp",
+                "alt": "10-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1820,7 +1820,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-8..bmp",
+                "alt": "10-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1832,7 +1832,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-9..bmp",
+                "alt": "10-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1844,7 +1844,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-10..bmp",
+                "alt": "10-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1856,7 +1856,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-11..bmp",
+                "alt": "10-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1868,7 +1868,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-12..bmp",
+                "alt": "10-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1880,7 +1880,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-13..bmp",
+                "alt": "10-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1892,7 +1892,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-14..bmp",
+                "alt": "10-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1904,7 +1904,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-15..bmp",
+                "alt": "10-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1916,7 +1916,7 @@
             },
             {
                 "ref": "10.bmp",
-                "alt": "10-16..bmp",
+                "alt": "10-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1928,7 +1928,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-1..bmp",
+                "alt": "11-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1940,7 +1940,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-2..bmp",
+                "alt": "11-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1952,7 +1952,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-3..bmp",
+                "alt": "11-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1964,7 +1964,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-4..bmp",
+                "alt": "11-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1976,7 +1976,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-5..bmp",
+                "alt": "11-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -1988,7 +1988,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-6..bmp",
+                "alt": "11-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2000,7 +2000,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-7..bmp",
+                "alt": "11-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2012,7 +2012,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-8..bmp",
+                "alt": "11-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2024,7 +2024,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-9..bmp",
+                "alt": "11-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2036,7 +2036,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-10..bmp",
+                "alt": "11-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2048,7 +2048,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-11..bmp",
+                "alt": "11-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2060,7 +2060,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-12..bmp",
+                "alt": "11-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2072,7 +2072,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-13..bmp",
+                "alt": "11-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2084,7 +2084,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-14..bmp",
+                "alt": "11-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2096,7 +2096,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-15..bmp",
+                "alt": "11-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2108,7 +2108,7 @@
             },
             {
                 "ref": "11.bmp",
-                "alt": "11-16..bmp",
+                "alt": "11-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2120,7 +2120,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-1..bmp",
+                "alt": "12-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2132,7 +2132,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-2..bmp",
+                "alt": "12-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2144,7 +2144,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-3..bmp",
+                "alt": "12-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2156,7 +2156,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-4..bmp",
+                "alt": "12-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2168,7 +2168,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-5..bmp",
+                "alt": "12-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2180,7 +2180,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-6..bmp",
+                "alt": "12-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2192,7 +2192,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-7..bmp",
+                "alt": "12-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2204,7 +2204,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-8..bmp",
+                "alt": "12-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2216,7 +2216,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-9..bmp",
+                "alt": "12-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2228,7 +2228,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-10..bmp",
+                "alt": "12-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2240,7 +2240,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-11..bmp",
+                "alt": "12-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2252,7 +2252,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-12..bmp",
+                "alt": "12-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2264,7 +2264,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-13..bmp",
+                "alt": "12-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2276,7 +2276,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-14..bmp",
+                "alt": "12-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2288,7 +2288,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-15..bmp",
+                "alt": "12-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2300,7 +2300,7 @@
             },
             {
                 "ref": "12.bmp",
-                "alt": "12-16..bmp",
+                "alt": "12-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2312,7 +2312,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-1..bmp",
+                "alt": "13-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2324,7 +2324,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-2..bmp",
+                "alt": "13-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2336,7 +2336,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-3..bmp",
+                "alt": "13-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2348,7 +2348,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-4..bmp",
+                "alt": "13-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2360,7 +2360,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-5..bmp",
+                "alt": "13-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2372,7 +2372,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-6..bmp",
+                "alt": "13-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2384,7 +2384,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-7..bmp",
+                "alt": "13-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2396,7 +2396,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-8..bmp",
+                "alt": "13-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2408,7 +2408,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-9..bmp",
+                "alt": "13-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2420,7 +2420,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-10..bmp",
+                "alt": "13-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2432,7 +2432,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-11..bmp",
+                "alt": "13-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2444,7 +2444,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-12..bmp",
+                "alt": "13-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2456,7 +2456,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-13..bmp",
+                "alt": "13-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2468,7 +2468,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-14..bmp",
+                "alt": "13-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2480,7 +2480,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-15..bmp",
+                "alt": "13-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2492,7 +2492,7 @@
             },
             {
                 "ref": "13.bmp",
-                "alt": "13-16..bmp",
+                "alt": "13-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2504,7 +2504,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-1..bmp",
+                "alt": "14-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2516,7 +2516,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-2..bmp",
+                "alt": "14-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2528,7 +2528,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-3..bmp",
+                "alt": "14-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2540,7 +2540,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-4..bmp",
+                "alt": "14-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2552,7 +2552,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-5..bmp",
+                "alt": "14-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2564,7 +2564,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-6..bmp",
+                "alt": "14-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2576,7 +2576,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-7..bmp",
+                "alt": "14-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2588,7 +2588,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-8..bmp",
+                "alt": "14-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2600,7 +2600,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-9..bmp",
+                "alt": "14-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2612,7 +2612,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-10..bmp",
+                "alt": "14-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2624,7 +2624,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-11..bmp",
+                "alt": "14-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2636,7 +2636,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-12..bmp",
+                "alt": "14-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2648,7 +2648,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-13..bmp",
+                "alt": "14-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2660,7 +2660,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-14..bmp",
+                "alt": "14-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2672,7 +2672,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-15..bmp",
+                "alt": "14-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2684,7 +2684,7 @@
             },
             {
                 "ref": "14.bmp",
-                "alt": "14-16..bmp",
+                "alt": "14-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2696,7 +2696,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-1..bmp",
+                "alt": "15-1.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2708,7 +2708,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-2..bmp",
+                "alt": "15-2.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2720,7 +2720,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-3..bmp",
+                "alt": "15-3.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2732,7 +2732,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-4..bmp",
+                "alt": "15-4.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2744,7 +2744,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-5..bmp",
+                "alt": "15-5.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2756,7 +2756,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-6..bmp",
+                "alt": "15-6.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2768,7 +2768,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-7..bmp",
+                "alt": "15-7.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2780,7 +2780,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-8..bmp",
+                "alt": "15-8.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2792,7 +2792,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-9..bmp",
+                "alt": "15-9.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2804,7 +2804,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-10..bmp",
+                "alt": "15-10.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2816,7 +2816,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-11..bmp",
+                "alt": "15-11.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2828,7 +2828,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-12..bmp",
+                "alt": "15-12.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2840,7 +2840,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-13..bmp",
+                "alt": "15-13.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2852,7 +2852,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-14..bmp",
+                "alt": "15-14.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2864,7 +2864,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-15..bmp",
+                "alt": "15-15.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2876,7 +2876,7 @@
             },
             {
                 "ref": "15.bmp",
-                "alt": "15-16..bmp",
+                "alt": "15-16.bmp",
                 "expect_similar": true,
                 "mods": {
                     "replace": {
@@ -2889,527 +2889,632 @@
             {
                 "ref": "01.bmp",
                 "alt": "02.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "03.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "04.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "05.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "06.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "07.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "08.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "09.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "01.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "03.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "04.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "05.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "06.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "07.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "08.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "09.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "02.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "04.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "05.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "06.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "07.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "08.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "09.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "03.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "05.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "06.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "07.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "08.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "09.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "04.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "06.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "07.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "08.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "09.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "05.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "07.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "08.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "09.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "06.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "07.bmp",
                 "alt": "08.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "07.bmp",
                 "alt": "09.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "07.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "07.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "07.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "07.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "07.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "07.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "08.bmp",
                 "alt": "09.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "08.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "08.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "08.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "08.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "08.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "08.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "09.bmp",
                 "alt": "10.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "09.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "09.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "09.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "09.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "09.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "10.bmp",
                 "alt": "11.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "10.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "10.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "10.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "10.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "11.bmp",
                 "alt": "12.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "11.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "11.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "11.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "12.bmp",
                 "alt": "13.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "12.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "12.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "13.bmp",
                 "alt": "14.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "13.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             },
             {
                 "ref": "14.bmp",
                 "alt": "15.bmp",
-                "expect_similar": false
+                "expect_similar": false,
+                "mods": {}
             }
         ]
     }
