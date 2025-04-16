@@ -81,7 +81,7 @@ class Action(ABC):  # Abstract
         self.out_dir.mkdir(parents=True, exist_ok=True)  # Create the output directory if it doesn't exist
         for path in self.paths:
             shutil.copy(path, self.out_dir / path.name)  # Copy the original files to the output directory
-            for i in range(1,17): # Generate 20 different versions of the file
+            for i in range(1,17): # Generate several different versions of the file
                 random.seed(i)
                 self.transform_and_save(path, f'{path.stem}-{i}{path.suffix}') # Transform the original files and save them in the output directory
 
@@ -95,13 +95,14 @@ class Action(ABC):  # Abstract
         for path in self.paths: # Save pairs of files that are similar
             ref_filename = str(path.name)
             for i in range(1,17):
-                alt_filename = f"{path.stem}-{i}.{path.suffix}"
+                alt_filename = f"{path.stem}-{i}{path.suffix}"
                 entries.append({"ref": ref_filename, "alt": alt_filename, "expect_similar": True, 
                     "mods": {id : {k: (str(v) if isinstance(v, Path) else v) for k,v in self.params.items()}}})
         
         for i,ref in enumerate(self.paths): # Save pairs of files that are not similar
             for _,alt in enumerate(self.paths[i+1:]):
-                entries.append({"ref": str(ref.name), "alt": str(alt.name), "expect_similar": False})
+                entries.append({"ref": str(ref.name), "alt": str(alt.name), "expect_similar": False,
+                                "mods": {}})
         
         list_of_benchs = [dict(id=id, name=name, description=description, cover=cover, content_type=content_type, entries=entries)]
         benchmark_dir = self.out_dir / "benchmark.json"
@@ -264,16 +265,16 @@ def main():
     # imswapper = SwapImage(nb_swaps=5, rel_size=0.05, in_dir=in_dir, out_dir=out_dir)
     # imswapper.generate_benchmark()
 
-    source_image = Path("C:/Users/defir/Documents/tests/ajout.bmp")
-    imreplacer = ReplaceImage(nb_add=5, rel_size=0.05, in_dir=in_dir, out_dir=out_dir, source=source_image)
-    imreplacer.generate_benchmark()
+    # source_image = Path("C:/Users/defir/Documents/tests/ajout.bmp")
+    # imreplacer = ReplaceImage(nb_add=5, rel_size=0.05, in_dir=in_dir, out_dir=out_dir, source=source_image)
+    # imreplacer.generate_benchmark()
 
-    # source = Path("C:/Users/defir/Documents/tests/ajout.txt")
-    # text_adder = AddText(nb_add=5, rel_size=0.05, in_dir=in_dir, out_dir=out_dir, source=source)
+    # source_texte = Path("C:/Users/defir/Documents/tests/ajout.txt")
+    # text_adder = AddText(nb_add=5, rel_size=0.05, in_dir=in_dir, out_dir=out_dir, source=source_texte)
     # text_adder.generate_benchmark()
 
-    # text_swapper = SwapText(nb_swaps=5, rel_size=0.05, in_dir=in_dir, out_dir=out_dir)
-    # text_swapper.generate_benchmark()
+    text_swapper = SwapText(nb_swaps=5, rel_size=0.05, in_dir=in_dir, out_dir=out_dir)
+    text_swapper.generate_benchmark()
 
 
 if __name__ == '__main__':
