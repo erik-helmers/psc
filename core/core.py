@@ -51,9 +51,11 @@ class Entry:
     """ This represents a pair of files that should be compared.
         The reference file (ref) is an "original" file, and the alternative file (alt)
         was produced by applying a series of modifications (mods) to the reference file.
+
+        The paths are relative to the `benchmarks` folder.
     """
-    ref: str
-    alt: str
+    ref: Path
+    alt: Path
     mods: dict[str, Any] = field(default_factory=dict) # mod id, value pairs
 
 
