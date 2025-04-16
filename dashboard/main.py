@@ -17,7 +17,7 @@ nav_links = [
         page["name"],
         href=page["relative_path"]
     )
-    for page in [pages["dashboard.pages.benchmarks"],pages["dashboard.pages.run"], pages["dashboard.pages.analysis"]]
+    for page in [pages["dashboard.pages.benchmarks"],pages["dashboard.pages.runners"], pages["dashboard.pages.analysis"]]
 ]
 
 
