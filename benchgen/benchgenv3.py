@@ -65,6 +65,29 @@ class Generator:
     def add_file(self, path: Path):
         shutil.copy(path, self.out_dir / path.name)
 
+
+    def add_matrix(self, in_dir: Path):
+        self.out_dir.mkdir(parents=True, exist_ok=True)
+
+        files = []
+
+        for in_file in in_dir.iterdir():
+
+            if not in_file.is_file(): continue
+            if in_file.name.startswith("."): continue
+
+            if not (self.out_dir / in_file.name).exists():
+                shutil.copy(in_file, self.out_dir / in_file.name)
+            in_file = self.out_dir / in_file.name
+
+            files.append(in_file)
+
+        for ref in files:
+            for alt in files:
+                if ref == alt: continue
+                self.entries.append(Entry(ref=ref, alt=alt, expect_similar=False))
+
+
     def finalize(self):
         desc = self.out_dir / "description.json"
 
