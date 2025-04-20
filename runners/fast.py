@@ -3,9 +3,6 @@ from pathlib import Path
 import fuzzylib
 from typing import Any
 
-# Dirty hack
-fuzzylib: Any = fuzzylib
-
 
 def fuzzylib_runner(algo) -> Any:
 
@@ -27,6 +24,6 @@ def fuzzylib_runner(algo) -> Any:
 runners = [
     Runner("nilsimsa-rs", "Nilsimsa", "Custom implementation of nilsisma",  fuzzylib_runner(fuzzylib.nilsimsa)),
     Runner("tlsh-rs", "TLSH", "Custom implementation of tlsh", fuzzylib_runner(fuzzylib.tlsh)),
-    # Runner("ssdeep-rs", "ssdeep", "Custom implementation of ssdeep", fuzzylib_runner(fuzzylib.ssdeep)),
-    # Runner("lzjd-rs", "LZJD", "LZJD (rust)", fuzzylib_runner(fuzzylib.lzjd)),
+    Runner("ssdeep-rs", "ssdeep", "Custom implementation of ssdeep", fuzzylib_runner(fuzzylib.ssdeep)),
+    Runner("lzjd-rs", "LZJD", "LZJD (rust)", fuzzylib_runner(fuzzylib.lzjd)),
 ]
