@@ -19,10 +19,11 @@ def layout(*, bench_id, **kwargs):
 
 
 def layout_details(bench_id, **kwargs):
-    bench = core.benchmarks[0]
+
+    bench = core.benchmarks.by_id(bench_id)
 
     return html.Div([
-        dcc.Store("bench-id", storage_type="session", data=bench.id),
+        dcc.Location(id="bench-id"),
         html.H1(f"Benchmark {bench.id}"),
         html.P("- aperçu des fichiers et diverses analyses"),
         html.P("- aperçu des resultats selon les différents runners"),
@@ -55,15 +56,16 @@ def entries_table(bench):
     Output(component_id='entries-table', component_property='columns'),
     Output(component_id='entries-table', component_property='data'),
     Input(component_id='entries-runner-cols', component_property='value'),
-    State(component_id='bench-id', component_property='data'),
+    State(component_id='bench-id', component_property='pathname'),
 )
 def entries_table_data(runners, bench_id):
+    bench_id = bench_id[bench_id.rfind('/')+1:]
     bench = core.benchmarks.by_id(bench_id)
     runners = core.runners.by_ids(runners)
     df = core.build_df(entries=bench.entries, runners=runners)
 
     if "runner" in df.columns:
-        df = df.pivot(index=["ref", "alt"], columns="runner", values="distance").reset_index()
+        df = df.pivot(index=["ref", "alt", "expect_similar"], columns="runner", values="distance").reset_index()
 
     df["id"] = df.index
     df.set_index('id', inplace=True, drop=False)
@@ -76,9 +78,10 @@ def entries_table_data(runners, bench_id):
 @callback(
     Output(component_id='cell-viz', component_property='children'),
     Input(component_id='entries-table', component_property='selected_cells'),
-    State(component_id='bench-id', component_property='data'),
+    State(component_id='bench-id', component_property='pathname'),
 )
 def cell_viz(cells, bench_id):
+    bench_id = bench_id[bench_id.rfind('/')+1:]
     bench = core.benchmarks.by_id(bench_id)
 
     def viz(row_id, column_id, **kwargs):
@@ -131,7 +134,7 @@ def ngrams(_bytes, n=2, with_repr=False):
 
 def file_viz_txt(path):
     _bytes = open(path, 'rb').read()
-    # content = _bytes.decode("utf8")
+    content = _bytes.decode("utf8")
 
     bigrams = ngrams(_bytes, with_repr=True)
     bigrams = px.scatter(bigrams, x="x", y="y", size="count", color="count", height=800, width=800, custom_data=[bigrams["repr"]])
@@ -144,7 +147,7 @@ def file_viz_txt(path):
     trigrams.update_traces(hovertemplate='%{x} %{y} <br>%{customdata[0]}')
 
     return dmc.Stack(children=[
-        dmc.Textarea(value = str(_bytes), minRows=8, maxRows=8, autosize=True),
+        dmc.Textarea(value = content, minRows=8, maxRows=8, autosize=True),
         dcc.Graph(figure=bigrams),
         dcc.Graph(figure=trigrams),
 

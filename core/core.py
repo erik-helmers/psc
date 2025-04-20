@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from typing import Any, Callable, overload
 import os
 import json
+import dataclasses
 from dataclasses import dataclass, field
 from typing import Any, Callable, overload
 import os
@@ -46,6 +47,7 @@ class Mod:
     description: str
 
 
+
 @dataclass
 class Entry:
     """ This represents a pair of files that should be compared.
@@ -56,7 +58,18 @@ class Entry:
     """
     ref: Path
     alt: Path
+    expect_similar: bool
     mods: dict[str, Any] = field(default_factory=dict) # mod id, value pairs
+
+    def asdict(self, root: Path | None = None):
+        out = dataclasses.asdict(self)
+        if root is not None:
+            out["ref"] = str(self.ref.relative_to(root))
+            out["alt"] = str(self.alt.relative_to(root))
+        return out
+
+
+
 
 
 
@@ -68,6 +81,14 @@ class Benchmark:
     description: str
     cover: str | None # Path to cover image if not None
     entries: list[Entry] = field(default_factory=list)
+
+    def asdict(self, root: Path | None = None):
+        out = dataclasses.asdict(self)
+        if root is not None:
+            out["entries"] = [e.asdict(root) for e in self.entries]
+        return out
+
+
 
 
 @dataclass
@@ -123,8 +144,7 @@ def read_entry(data, root, directory) -> Entry:
     ref = ref.relative_to(root)
     alt = alt.relative_to(root)
 
-    return Entry(ref=ref, alt=alt, mods = data["mods"])
-
+    return Entry(ref=ref, alt=alt, expect_similar=data["expect_similar"], mods = data.get("mods",  {}))
 
 def compute_results(root: Path, runner, entries, cache = None):
     if not entries: return []
@@ -193,17 +213,19 @@ class Core:
         exclude_bench = int(len(benchmarks) == 0)
 
         if runners:
-            cols : Any = ["bench", "ref", "alt", "distance", "runner"][exclude_bench:]
+            cols : Any = ["bench", "ref", "alt", "expect_similar", "distance", "runner"][exclude_bench:]
             rows = []
             for r in runners:
                 res = self.run(r, [e for _, e in _entries])
-                rows += [ [b, str(e.ref), str(e.alt), res.distance, r.id][exclude_bench:]
+                rows += [ [b, str(e.ref), str(e.alt), e.expect_similar, res.distance, r.id][exclude_bench:]
                         for (b, e), res in zip(_entries, res)]
 
         else:
-            cols = ["bench", "ref", "alt"][exclude_bench:]
-            rows = [ [b, str(e.ref), str(e.alt)][exclude_bench:]
+            cols = ["bench", "ref", "alt", "expect_similar"][exclude_bench:]
+            rows = [ [b, str(e.ref), str(e.alt), e.expect_similar][exclude_bench:]
                       for (b, e) in _entries]
 
+        print(*cols, sep='\t')
+        print(*rows[:10], sep='\n')
         out = pd.DataFrame(rows, columns=cols)
         return  out
