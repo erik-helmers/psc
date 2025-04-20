@@ -20,10 +20,10 @@ def layout(*, runner_id, **kwargs):
 
 
 def layout_details(runner_id, **kwargs):
-    runner = core.runners[0]
+    runner = core.runners.by_id(runner_id)
 
     return html.Div([
-        dcc.Store("runner-id", storage_type="session", data=runner.id),
+        dcc.Location(id="runner-id"),
         html.H1(f"Runner {runner.id}"),
 
         html.P(f"{runner.name}: {runner.description}"),
