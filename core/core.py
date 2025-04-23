@@ -237,5 +237,11 @@ class Core:
         if not runners:
             rows += [  { "benchmark": b } | e.asdict()  for (b, e) in entries]
 
+
+
         out = pd.DataFrame(rows)
+        if prettify:
+            from .analysis import pretty
+            out = pretty(out)
+
         return  out
