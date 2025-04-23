@@ -14,7 +14,7 @@ class PathColumnType(TypeDecorator):
     def process_bind_param(self, value, dialect):
         return str(value) if value is not None else None
     def process_result_value(self, value, dialect):
-        return Path(value)
+        return Path(str(value))
 
 
 class DbResult(Base):
@@ -23,7 +23,7 @@ class DbResult(Base):
     runner = Column(String, primary_key=True)
     ref = Column(PathColumnType, primary_key=True)
     alt = Column(PathColumnType, primary_key=True)
-    dist = Column(Float, primary_key=False)
+    dist = Column(Float, primary_key=False, nullable=False)
 
     @staticmethod
     def from_result(result):
@@ -42,30 +42,20 @@ class Cache:
         self.session = sessionmaker(bind=engine)()
 
     def save_results(self, results):
+        if not results: return
         self.session.bulk_save_objects([
             DbResult.from_result(res)
             for res in results
         ])
         self.session.commit()
 
-    def update_results(self, results):
-        # this is rather slow
-        for res in results:
-            self.session.merge(DbResult.from_result(res))
-        self.session.commit()
+    def populate_results(self, results):
 
-    def get_results(self, runner, pairs):
+        ids = { (r.runner.id, r.entry.ref, r.entry.alt): r for r in results }
+
         rows = (self.session.query(DbResult.runner, DbResult.ref, DbResult.alt, DbResult.dist)
-            .filter(DbResult.runner == runner)
-            .filter(tuple_(DbResult.ref, DbResult.alt).in_(pairs))
+            .filter(tuple_(DbResult.runner, DbResult.ref, DbResult.alt).in_(list(ids.keys())))
             .all())
 
-        return [(runner, ref, alt, dist) for runner, ref, alt, dist in rows]
-
-    def populate_results(self, results):
-        pairs = [(res.entry.ref, res.entry.alt) for res in results]
-        runner = results[0].runner.id
-        result_idx = { (res.entry.ref, res.entry.alt): res for res in results }
-
-        for _, ref, alt, dist in self.get_results(runner, pairs):
-            result_idx[(ref, alt)].distance = dist
+        for (runner, ref, alt, dist) in rows:
+            ids[(runner, ref, alt)].distance = dist

@@ -62,10 +62,14 @@ def entries_table_data(runners, bench_id):
     bench_id = bench_id[bench_id.rfind('/')+1:]
     bench = core.benchmarks.by_id(bench_id)
     runners = core.runners.by_ids(runners)
-    df = core.build_df(entries=bench.entries, runners=runners)
+
+    df = core.build_df(runners, bench.entries)
+    df = df.drop(columns=["benchmark"])
+    df["mods"] = df["mods"].apply(str)
+
 
     if "runner" in df.columns:
-        df = df.pivot(index=["ref", "alt", "expect_similar"], columns="runner", values="distance").reset_index()
+        df = df.pivot(index=["ref", "alt", "expect_similar", "mods"], columns="runner", values="distance").reset_index()
 
     df["id"] = df.index
     df.set_index('id', inplace=True, drop=False)

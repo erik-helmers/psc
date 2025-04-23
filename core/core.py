@@ -63,9 +63,14 @@ class Entry:
 
     def asdict(self, root: Path | None = None):
         out = dataclasses.asdict(self)
+
         if root is not None:
             out["ref"] = str(self.ref.relative_to(root))
             out["alt"] = str(self.alt.relative_to(root))
+        else:
+            out["ref"] = str(self.ref)
+            out["alt"] = str(self.alt)
+
         return out
 
 
@@ -153,9 +158,13 @@ def compute_results(root: Path, runner, entries, cache = None):
 
     if cache is not None: cache.populate_results(results)
 
-    distances = runner.run([(root/e.ref, root/e.alt) for e in entries])
+    new_results = [r for r in results if r.distance is None]
+
+    distances = runner.run([(root/r.entry.ref, root/r.entry.alt) for r in new_results])
     for idx, dist in enumerate(distances):
-        results[idx].distance = dist
+        new_results[idx].distance = dist
+
+    if cache is not None: cache.save_results(new_results)
 
     return results
 
@@ -205,27 +214,28 @@ class Core:
         return out[0] if isinstance(entries, Entry) else out
 
 
-    def build_df(self, benchmarks = [], entries = [], runners = [], ):
+    def build_df(self, runners, benchmarks_or_entries, prettify = True):
 
-        _entries = [(b.id, e) for b in benchmarks for e in b.entries]
-        _entries += [("", e) for e in entries]
+        try: objs = list(benchmarks_or_entries)
+        except TypeError: objs = [benchmarks_or_entries]
 
-        exclude_bench = int(len(benchmarks) == 0)
+        try: runners = list(runners)
+        except TypeError: runners = [runners]
 
-        if runners:
-            cols : Any = ["bench", "ref", "alt", "expect_similar", "distance", "runner"][exclude_bench:]
-            rows = []
-            for r in runners:
-                res = self.run(r, [e for _, e in _entries])
-                rows += [ [b, str(e.ref), str(e.alt), e.expect_similar, res.distance, r.id][exclude_bench:]
-                        for (b, e), res in zip(_entries, res)]
+        def to_entries(obj):
+            if isinstance(obj, Benchmark):
+                return [(obj.id, e) for e in obj.entries]
+            return [("", obj)]
 
-        else:
-            cols = ["bench", "ref", "alt", "expect_similar"][exclude_bench:]
-            rows = [ [b, str(e.ref), str(e.alt), e.expect_similar][exclude_bench:]
-                      for (b, e) in _entries]
+        entries : list[tuple[str, Entry]] = [ e for obj in objs for e in to_entries(obj)  ]
 
-        print(*cols, sep='\t')
-        print(*rows[:10], sep='\n')
-        out = pd.DataFrame(rows, columns=cols)
+        rows = []
+        for r in runners:
+            res = self.run(r, [e for _, e in entries])
+            rows += [  { "benchmark": b } | e.asdict() | { "distance": res.distance, "runner": r.id }
+                      for (b, e), res in zip(entries, res)]
+        if not runners:
+            rows += [  { "benchmark": b } | e.asdict()  for (b, e) in entries]
+
+        out = pd.DataFrame(rows)
         return  out
