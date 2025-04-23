@@ -48,6 +48,10 @@ def entries_table_data(runner_id, explore):
     runner_id = runner_id[runner_id.rfind('/')+1:]
     runner = core.runners.by_id(runner_id)
 
+    if explore:
+        df = core.build_df(runner, core.benchmarks)
+        return [pygwalker(df)]
+
     out = []
 
     for bench in core.benchmarks:
