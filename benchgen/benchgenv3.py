@@ -38,7 +38,7 @@ class Generator:
                     self.benchmark.entries = []
 
 
-    def apply_action(self, in_dir: Path, action: 'Action'):
+    def apply_action(self, in_dir: Path, action: 'Action', expect_similar=True):
         self.out_dir.mkdir(parents=True, exist_ok=True)
 
         for in_file in in_dir.iterdir():
@@ -59,7 +59,7 @@ class Generator:
 
             action.transform(in_file, out_file)
 
-            entry = Entry(in_file, out_file, expect_similar=False, mods=action.mods())
+            entry = Entry(in_file, out_file, expect_similar=expect_similar, mods=action.mods())
             self.entries.append(entry)
 
     def add_file(self, path: Path):
