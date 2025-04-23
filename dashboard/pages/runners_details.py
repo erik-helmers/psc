@@ -1,3 +1,4 @@
+from os import execlpe
 from pathlib import Path
 import dash
 from dash import html, dash_table, callback, Input, Output, State, dcc
@@ -22,7 +23,8 @@ def layout(*, runner_id, **kwargs):
 
 
 def layout_details(runner_id, **kwargs):
-    runner = core.runners.by_id(runner_id)
+    try: runner = core.runners.by_id(runner_id)
+    except KeyError: return [dmc.Text("Runner not found")]
 
     return html.Div([
         dcc.Location(id="runner-id"),
@@ -46,7 +48,9 @@ def layout_details(runner_id, **kwargs):
 )
 def entries_table_data(runner_id, explore):
     runner_id = runner_id[runner_id.rfind('/')+1:]
-    runner = core.runners.by_id(runner_id)
+
+    try: runner = core.runners.by_id(runner_id)
+    except KeyError: return []
 
     if explore:
         df = core.build_df(runner, core.benchmarks)

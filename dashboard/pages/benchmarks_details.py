@@ -19,8 +19,8 @@ def layout(*, bench_id, **kwargs):
 
 
 def layout_details(bench_id, **kwargs):
-
-    bench = core.benchmarks.by_id(bench_id)
+    try: bench = core.benchmarks.by_id(bench_id)
+    except KeyError: return html.Div([dmc.Text("benchmark not found")])
 
     return html.Div([
         dcc.Location(id="bench-id"),

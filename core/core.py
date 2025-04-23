@@ -26,8 +26,10 @@ class Store(list):
         # Here our cache will be wrong if elements are removed from the list
         # but we don't care about that for now.
         self.__ids = { obj.id: obj for obj in self }
+
         if obj := self.__ids.get(id, None): return obj
-        raise ValueError(f"Item with id '{id}' not found")
+        else: raise KeyError(f"Item with id '{id}' not found")
+
 
     def by_ids(self, ids):
         """ Return the first element with the given id. """
