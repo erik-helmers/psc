@@ -117,7 +117,7 @@ def find_all_benchmarks(root) -> list[Benchmark]:
         if not directory.is_dir(): continue
         out.extend(read_benchmarks(root, directory))
 
-    return out
+    return sorted(out, key=lambda obj: obj.id)
 
 
 def read_benchmarks(root, directory) -> list[Benchmark]:
