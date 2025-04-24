@@ -24,6 +24,7 @@ class DbResult(Base):
     ref = Column(PathColumnType, primary_key=True)
     alt = Column(PathColumnType, primary_key=True)
     dist = Column(Float, primary_key=False, nullable=False)
+    duration = Column(Float, primary_key=False, nullable=False)
 
     @staticmethod
     def from_result(result):
@@ -31,7 +32,10 @@ class DbResult(Base):
             runner=result.runner.id,
             ref=result.entry.ref,
             alt=result.entry.alt,
-            dist=result.distance)
+            dist=result.distance,
+            duration=result.duration
+        )
+
 
 class Cache:
 
@@ -39,23 +43,28 @@ class Cache:
         url = f"sqlite:///{str(path)}"
         engine = create_engine(url, echo=False)
         Base.metadata.create_all(engine)
-        self.session = sessionmaker(bind=engine)()
+        self.Session = sessionmaker(bind=engine)
+
 
     def save_results(self, results):
         if not results: return
-        self.session.bulk_save_objects([
-            DbResult.from_result(res)
-            for res in results
-        ])
-        self.session.commit()
+
+        with self.Session() as session, session.begin():
+            session.bulk_save_objects([
+                DbResult.from_result(res)
+                for res in results
+            ])
 
     def populate_results(self, results):
 
         ids = { (r.runner.id, r.entry.ref, r.entry.alt): r for r in results }
 
-        rows = (self.session.query(DbResult.runner, DbResult.ref, DbResult.alt, DbResult.dist)
-            .filter(tuple_(DbResult.runner, DbResult.ref, DbResult.alt).in_(list(ids.keys())))
-            .all())
+        with self.Session() as session, session.begin():
+            rows = (session.query(DbResult.runner, DbResult.ref, DbResult.alt, DbResult.dist, DbResult.duration)
+                .filter(tuple_(DbResult.runner, DbResult.ref, DbResult.alt).in_(list(ids.keys())))
+                .all())
 
-        for (runner, ref, alt, dist) in rows:
-            ids[(runner, ref, alt)].distance = dist
+        for (runner, ref, alt, dist, duration) in rows:
+            res = ids[(runner, ref, alt)]
+            res.distance = dist
+            res.duration = duration

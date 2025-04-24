@@ -77,9 +77,6 @@ class Entry:
 
 
 
-
-
-
 @dataclass
 class Benchmark:
     id: str
@@ -110,7 +107,7 @@ class Result:
     entry: Entry
     runner: Runner
     distance: float
-
+    duration: float
 
 
 def find_all_benchmarks(root) -> list[Benchmark]:
@@ -156,15 +153,25 @@ def read_entry(data, root, directory) -> Entry:
 def compute_results(root: Path, runner, entries, cache = None):
     if not entries: return []
 
-    results = [Result(entry, runner, None ) for entry in entries] # type: ignore
+    results = [Result(entry, runner, None, None ) for entry in entries] # type: ignore
 
     if cache is not None: cache.populate_results(results)
 
     new_results = [r for r in results if r.distance is None]
 
+    if not new_results:  return results
+
+    from time import perf_counter
+
+    # We don't need reliable time mesurement. This is used to have an order of magnitude, so it is rather
+    start = perf_counter()
     distances = runner.run([(root/r.entry.ref, root/r.entry.alt) for r in new_results])
+    stop  = perf_counter()
+    duration = (stop - start)  / len(new_results)
+
     for idx, dist in enumerate(distances):
         new_results[idx].distance = dist
+        new_results[idx].duration = duration
 
     if cache is not None: cache.save_results(new_results)
 
@@ -234,11 +241,12 @@ class Core:
         rows = []
         for r in runners:
             res = self.run(r, [e for _, e in entries])
-            rows += [  { "benchmark": b } | e.asdict() | { "distance": res.distance, "runner": r.id }
-                      for (b, e), res in zip(entries, res)]
+            rows += [  ({ "benchmark": b }
+                        | e.asdict()
+                        | { "distance": res.distance, "duration": res.duration, "runner": r.id })
+                       for (b, e), res in zip(entries, res) ]
         if not runners:
             rows += [  { "benchmark": b } | e.asdict()  for (b, e) in entries]
-
 
 
         out = pd.DataFrame(rows)
